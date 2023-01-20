@@ -49,12 +49,12 @@ const About = () => {
             </h2>
             <Fade bottom>
               <p>
-                Soy un ambicioso programador FullStack que va aprendiendo mediante cursos en línea
+                Soy un ambicioso programador FullStack que va aprendiendo mediante cursos en línea.
               </p>
             </Fade>
             <Fade bottom>
               <p>
-                Soy del Estado Plurinacional de Bolivia del departamento de La Paz, he sido freelacer por 3 años mientras estudiaba para el Tecnico Medio adquiriendo experiencia laboral 
+                Soy del Estado Plurinacional de Bolivia del departamento de La Paz, he sido freelacer por 3 años mientras estudiaba para el Tecnico Medio adquiriendo experiencia laboral.
               </p>
             </Fade>
             <Fade bottom>
@@ -66,7 +66,7 @@ he podido aprender y perfeccionar
 conocimientos que me han ayudado a construir
 un perfil específico. En la actualidad estoy
 buscando un un trabajo que me ayude a seguir
-ampliando mi experiencia
+ampliando mi experiencia.
               </p>
             </Fade>
             <Fade left>
