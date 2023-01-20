@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepages":"https://walter-202.github.io/portfolio",
   "dependencies": {
     "@emailjs/browser": "^3.6.2",
     "@ramonak/react-progress-bar": "^5.0.1",
