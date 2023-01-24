@@ -4,13 +4,12 @@
   position: absolute;
   left: 63%;
   display: block;
-  // animation: fadeIn 10s linear;
+  animation: fadeIn 10s linear;
   opacity: 0;
 
   svg {
     width: 100%;
     height: auto;
-    fill: transparent;
   }
   .solid-logo {
     position: absolute;
