@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6cf6d047.css",
-    "main.js": "/static/js/main.a860a1e3.js",
+    "main.css": "../static/css/main.6cf6d047.css",
+    "main.js": "../static/js/main.a860a1e3.js",
     "static/media/vos.png": "../static/media/vos.06531279b2b6e0479186.png",
     "static/media/radio.png": "../static/media/radio.f4fa1993ad962fd4c667.png",
     "static/media/MyCV.pdf": "../static/media/MyCV.736650a9a4e9c766aa83.pdf",
