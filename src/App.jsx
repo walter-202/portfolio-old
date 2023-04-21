@@ -18,7 +18,7 @@ import './utils/templateColors.scss'
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/portfolio/'>
       <Sidebar />
       <ThemeTemplate />
       <Routes>

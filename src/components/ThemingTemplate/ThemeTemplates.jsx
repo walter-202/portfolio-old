@@ -31,7 +31,7 @@ const ThemeTemplate = React.memo(() => {
         }`}
       >
         <div className="theme-header">
-          <span>Theme Template</span>
+          <span>Colores y Modo oscuro</span>
           <span>
             <BsXLg
               onClick={closeTemplate}

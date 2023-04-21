@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.2.0",
   "private": true,
-  "homepages": "https://walter-202.github.io/portfolio",
+  "homepage": "https://walter-202.github.io/portfolio",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "animate.css": "^4.1.1",

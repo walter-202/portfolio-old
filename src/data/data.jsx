@@ -16,13 +16,20 @@ import {
   SiPhp,
   SiPhpmyadmin,
   SiFlutter,
+  SiLaravel,
+  SiTailwindcss,
+  SiLivewire,
+  SiAlpinedotjs,
+  SiAdobephotoshop,
+  SiAdobeillustrator,
+  SiApple,
 } from 'react-icons/si'
 
 import { GrGithub, GrTwitter } from 'react-icons/gr'
 import { AiFillHtml5 } from 'react-icons/ai'
 import { DiCss3, DiMongodb } from 'react-icons/di'
 import { IoLogoJavascript } from 'react-icons/io'
-import { FaNodeJs,FaPhotoVideo} from 'react-icons/fa'
+import { FaAndroid, FaNodeJs,FaPhotoVideo} from 'react-icons/fa'
 
 // sidebar menu list and icons
 const sideBarMenu = [
@@ -49,7 +56,7 @@ const sideBarMenu = [
   {
     text: 'Error Diseño',
     icon: <SiFuturelearn className="link-icon" />,
-    url: '/tutorial',
+    url: '/error',
   },
 ]
 // social media icons and url
@@ -80,7 +87,7 @@ const skillSet = [
   },
   {
     icon: <IoLogoJavascript className="skills-icon switch__color" />,
-    spanText: 'JAVASCRIPT',
+    spanText: 'JavaScript',
   },
   {
     icon: <SiSass className="skills-icon switch__color" />,
@@ -89,34 +96,30 @@ const skillSet = [
 
   {
     icon: <BsBootstrapFill className="skills-icon switch__color" />,
-    spanText: 'BOOTSTRAP',
+    spanText: 'Boostrap',
   },
 
   {
     icon: <SiJquery className="skills-icon switch__color" />,
-    spanText: 'JQUERY',
-  },
-  {
-    icon: <FaPhotoVideo className="skills-icon switch__color" />,
-    spanText: 'Photoshop & Animations',
+    spanText: 'JQuery',
   },
   {
     icon: <SiFlutter className="skills-icon switch__color" />,
-    spanText: 'FLUTTER',
+    spanText: 'Flutter',
   },
   {
     icon: <RiReactjsLine className="skills-icon switch__color" />,
-    spanText: 'REACT JS',
+    spanText: 'React JS',
   },
 
   {
     icon: <FaNodeJs className="skills-icon switch__color" />,
-    spanText: 'NODE',
+    spanText: 'Node',
   },
 
   {
     icon: <DiMongodb className="skills-icon switch__color" />,
-    spanText: 'MONGO DB',
+    spanText: 'Mongo DB',
   },
   {
     icon: <SiMysql className="skills-icon switch__color" />,
@@ -133,6 +136,38 @@ const skillSet = [
   {
     icon: <SiPhpmyadmin className="skills-icon switch__color" />,
     spanText: 'PhpMyAdmin',
+  },
+  {
+    icon: <SiLaravel className="skills-icon switch__color" />,
+    spanText: 'Laravel',
+  },
+  {
+    icon: <SiTailwindcss className="skills-icon switch__color" />,
+    spanText: 'Tailwind',
+  },
+  {
+    icon: <SiLivewire className="skills-icon switch__color" />,
+    spanText: 'Livewire',
+  },
+  {
+    icon: <SiAlpinedotjs className="skills-icon switch__color" />,
+    spanText: 'Alpine',
+  },
+  {
+    icon: <SiAdobephotoshop className="skills-icon switch__color" />,
+    spanText: 'Photoshop',
+  },
+  {
+    icon: <SiAdobeillustrator className="skills-icon switch__color" />,
+    spanText: 'Illustrator',
+  },
+  {
+    icon: <FaAndroid className="skills-icon switch__color" />,
+    spanText: 'Android Apps',
+  },
+  {
+    icon: <SiApple className="skills-icon switch__color" />,
+    spanText: 'Apple Apps',
   },
 ]
 

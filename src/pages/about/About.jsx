@@ -46,7 +46,7 @@ const About = () => {
                 indexLetter={15}
               />
             </h2>
-            <Fade cascade duration={1500} delay={500} up>
+            <Fade cascade duration={1100} delay={300} up>
               <p>
                 Soy un ambicioso programador FullStack que va aprendiendo mediante cursos en línea.
               </p>
@@ -63,12 +63,10 @@ un perfil específico. En la actualidad estoy
 buscando un un trabajo que me ayude a seguir
 ampliando mi experiencia.
               </p>
-            </Fade>
-            <Fade left>
               <a
                 style={{ marginTop: '2rem' }}
                 href={myCV}
-                download
+                download="Walter_Aguilar_CV"
                 className="contact-button"
               >
                 <div>
