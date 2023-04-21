@@ -1,11 +1,11 @@
 import React from 'react'
-import Fade from 'react-reveal/Fade'
+import { Fade } from "react-awesome-reveal";
 import './projects.scss'
 
 const Project = (props) => {
   const { imgUrl, name, desc, stack, gitHubUrl, website } = props
   return (
-    <Fade bottom>
+    <Fade top duration={5000}>
       <section className="section__projects-single-projects">
         <img src={imgUrl} alt="" />
         <div className="section__projects-contents">

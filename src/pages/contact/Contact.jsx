@@ -2,8 +2,7 @@ import React, { useState, useRef } from 'react'
 import { BsExclamationLg, BsPatchCheckFill } from 'react-icons/bs'
 import { RiSendPlane2Fill } from 'react-icons/ri'
 import { Blast, Map } from '../../components'
-import Fade from 'react-reveal/Fade'
-import Reveal from 'react-reveal/Reveal'
+import { Fade,Reveal } from "react-awesome-reveal";
 
 
 // Email js
@@ -40,7 +39,6 @@ const Contact = React.memo(() => {
   const emailRef = useRef(null)
   const TextAreaRef = useRef(null)
   const MessageRef = useRef(null)
-
   const form = useRef(null)
 
   // show Message function
@@ -87,7 +85,6 @@ const Contact = React.memo(() => {
   const onSubmit = (e) => {
     e.preventDefault()
     const { email, message } = validInpt
-    // const pattern = /^[^]+@[^]+\.[a-z]{2,3}$/
     const pattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
     if (!email && !message) {
       setError(emailRef)
@@ -106,14 +103,14 @@ const Contact = React.memo(() => {
       showMessage('Deja un mensaje por favor!')
     } else if (email && !message) {
       setError(TextAreaRef)
-      showMessage('por favor! enviar un mensaje')
+      showMessage('Por favor! enviar un mensaje')
       
     } else if (email && message) {
       emailjs.sendForm(
-        'service_6o34bbh',
-        'template_z9y04qv',
+        'service_dg98pxo',
+        'template_7llqe5h',
         form.current,
-        '6X-q3dBLK3LqCfguA',
+        'QnqDqhjaPA2e7VofS',
       )
       setSuccess(emailRef)
       setSuccess(TextAreaRef)
@@ -137,17 +134,17 @@ const Contact = React.memo(() => {
             <h2 aria-label="contact me" className="contact__heading">
               <Blast
                 letterClass={letterClass}
-                arrayStr={['C', 'o', 'n', 't', 'a', 'c', 't', 'á', 'm', 'e']}
+                arrayStr={['C', 'o', 'n', 't', 'á', 'c', 't', 'a', 'm', 'e']}
                 indexLetter={12}
               />
             </h2>
-            <Fade bottom>
+            <Fade duration={5000} bottom>
               <p>
                 Soy un freelancer que está siempre disponible para crear proyectos en cualquier momento, cualquier trabajo que pueda realizar, puedes mandarme un mensaje mediante este formulario.
               </p>
             </Fade>
           </div>
-          <Fade bottom>
+          <Fade cascade bottom>
             <div className="input-wrapper">
               <div className="form-input-group">
                 <input
@@ -178,8 +175,6 @@ const Contact = React.memo(() => {
                 <BsPatchCheckFill className="checkCircle" />
               </div>
             </div>
-          </Fade>
-          <Fade bottom>
             <div className="form-input-group">
               <input
                 autoComplete="false"
@@ -193,8 +188,6 @@ const Contact = React.memo(() => {
               <BsExclamationLg className="exclamation" />
               <BsPatchCheckFill className="checkCircle" />
             </div>
-          </Fade>
-          <Fade bottom>
             <div className="form-input-group">
               <textarea
                 autoComplete="false"
@@ -210,7 +203,7 @@ const Contact = React.memo(() => {
               <BsPatchCheckFill className="checkCircle" />
             </div>
           </Fade>
-          <Fade left>
+          <Reveal>
             <button type="submit" className="contact-button submit-button">
               <div>
                 <span className="bg switch__bg"></span>
@@ -221,10 +214,10 @@ const Contact = React.memo(() => {
                 </span>
               </div>
             </button>
-          </Fade>
-          <Reveal bottom>
+          </Reveal>
+          <Reveal >
             <footer className="footer">
-              <p> &copy; copyright by Walter Aguilar - 2022</p>
+              <p> &copy; copyright by Walter Aguilar - {new Date().getFullYear()}</p>
             </footer>
           </Reveal>
         </form>

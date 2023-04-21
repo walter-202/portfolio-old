@@ -7,14 +7,13 @@
 }
 
 .skill-container {
-  padding: 15px;
+  padding: 1rem;
   background-color: var(--primary-bg);
-  border-radius: 5px;
+  border-radius: .5rem;
   box-shadow: var(--box-shadow);
   position: relative;
   display: grid;
   place-items: center;
-  position: relative;
   transition: all 250ms;
   .skills-icon {
     font-size: 2.5rem;
@@ -25,6 +24,7 @@
     font-size: 0.875rem;
     text-transform: capitalize;
     margin-top: 10px;
+    text-align: center;
   }
 }
 

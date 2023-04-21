@@ -36,10 +36,10 @@ body {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #454545;
+  background: var(--primary-color);
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(128, 128, 128);
+  background-color: var(--anchor-color);
 }
 
 p {
@@ -85,11 +85,10 @@ a {
   --primary-text-color: #fff;
   --anchor-color: #cc6c06;
   --sideBar-bg: #dddddd;
-  --box-shadow: 0 0 15px 0px #0808087a;
+  --box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);;
   --light-bg: #504d4b;
   --typical-color: rgb(40, 40, 39);
   --theme-wrapper-bg: #ffffff;
-  --primary-text-color: #151414;
   --hover-color: #1b1b1b;
 }
 

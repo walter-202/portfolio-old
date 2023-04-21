@@ -1,7 +1,6 @@
 import React from 'react'
-import myCV from '../../assets/images/MyCV.pdf'
-import Reveal from 'react-reveal/Reveal'
-import Fade from 'react-reveal/Fade'
+import myCV from '/src/assets/images/MyCV.pdf'
+import { Fade } from "react-awesome-reveal";
 
 // components
 import { Cards, Blast } from '../../components'
@@ -19,9 +18,9 @@ const About = () => {
     <>
     
       <div className="section-about-wrapper section__padding section-about">
-      <Reveal>
+      <Fade>
         <div className="fake-big">Acerca de mí</div>
-      </Reveal>
+      </Fade>
         <article className="section-about-description">
           <div>
             <h2 arial-aria-label="About and skills">
@@ -31,7 +30,7 @@ const About = () => {
                   'M',
                   'i',
                   's',
-                  '',
+                  ' ',
                   'H',
                   'a',
                   'b',
@@ -47,17 +46,13 @@ const About = () => {
                 indexLetter={15}
               />
             </h2>
-            <Fade bottom>
+            <Fade cascade duration={1500} delay={500} up>
               <p>
                 Soy un ambicioso programador FullStack que va aprendiendo mediante cursos en línea.
               </p>
-            </Fade>
-            <Fade bottom>
               <p>
                 Soy del Estado Plurinacional de Bolivia del departamento de La Paz, he sido freelacer por 3 años mientras estudiaba para el Tecnico Medio adquiriendo experiencia laboral.
               </p>
-            </Fade>
-            <Fade bottom>
               <p>
               Técnico medio en Ingeniería Informática con 2
 años de experiencia como desarrollador web de
@@ -74,7 +69,7 @@ ampliando mi experiencia.
                 style={{ marginTop: '2rem' }}
                 href={myCV}
                 download
-                className="contact-button submit-button"
+                className="contact-button"
               >
                 <div>
                   <span className="bg switch__bg"></span>

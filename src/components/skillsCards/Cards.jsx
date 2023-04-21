@@ -1,5 +1,5 @@
 import React from 'react'
-import Fade from 'react-reveal/Fade'
+import { Reveal, Zoom } from "react-awesome-reveal";
 import { skillSet } from '../../data/data'
 import './cards.scss'
 
@@ -7,17 +7,12 @@ const Cards = () => {
   return (
     <div className="about-description-skills">
       {skillSet.map((item, index) => (
-        <Fade bottom key={index + item}>
-          <a
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="skill-container"
-          >
-            {item.icon}
+        <Reveal delay={300} key={index + item}>
+          <div className="skill-container">
+          <Zoom delay={1000}>{item.icon}</Zoom>
             <span className="skill__name">{item.spanText}</span>
-          </a>
-        </Fade>
+          </div>
+        </Reveal>
       ))}
     </div>
   )

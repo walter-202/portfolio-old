@@ -3,7 +3,7 @@ import { MapContainer, TileLayer} from 'react-leaflet'
 
 const Map = () => {
   return (
-    <MapContainer center={[-16.495513, -68.131886]} zoom={10} scrollWheelZoom={false}>
+    <MapContainer center={[-16.495513, -68.131886]} zoom={13} scrollWheelZoom={false}>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <div className="map-content">
         <h3 className="switch__color">Walter Aguilar</h3>

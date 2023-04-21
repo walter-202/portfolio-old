@@ -74,7 +74,7 @@ const Header = () => {
             <div>
               <span className="bg switch__bg"></span>
               <span className="base switch__border-color"></span>
-              <span className="text">Contactame</span>
+              <span className="text">Contáctame</span>
             </div>
           </Link>
           <Logo />

@@ -96,7 +96,7 @@
 }
 
 .contact-button:hover span.text {
-  color: #2d2b2b;
+  color: var(--primary-text-color);
 }
 
 .submit-button {
@@ -110,21 +110,19 @@
 }
 
 .submit-button:hover {
-  color: #2d2b2b;
+  color: var(--primary-text-color);
 }
 .scroll__wrapper {
   display: flex;
-  place-items: center;
-  transform: translate(80%, 80%);
-  position: relative;
+  position: absolute;
   color: var(--color-tem);
+  width: 80%;
+  justify-content: center;
   &::after {
     content: 'scroll down';
     position: absolute;
     top: 0;
-    left: -8px;
   }
-  display: none;
 }
 
 .scroll__down {
@@ -133,12 +131,6 @@
 }
 .scroll__down:hover .scroll__wrapper::after {
   display: block;
-}
-
-@media screen and (min-width: 1200px) {
-  .scroll__wrapper {
-    display: block;
-  }
 }
 
 @keyframes scroll {
@@ -172,7 +164,7 @@
 @media screen and (max-width: 1024px) {
   .intro-page h1 {
     font-size: 5.5rem;
-    line-height: 5rem;
+    line-height: 7rem;
     letter-spacing: -2px;
   }
   .section-1 .text-desc {

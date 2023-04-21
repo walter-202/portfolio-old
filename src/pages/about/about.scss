@@ -10,11 +10,13 @@
   padding-top: 100px;
   display: grid;
   grid-template-columns: 1fr;
+  position: relative;
 }
 .section-about-description h2 {
   display: block;
   font-size: 2rem;
   margin-bottom: 25px;
+  letter-spacing: .01em;
   .text-animate-hover {
     &:hover {
       color: var(--hover-color);

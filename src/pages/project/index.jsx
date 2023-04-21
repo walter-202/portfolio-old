@@ -16,11 +16,11 @@ export const projects = [
     stack: 'HTML CSS JAVASCRIPT',
     gitHubUrl: {
       icon: <GrGithub />,
-      url: 'https://github.com/walter-202/radioImpacto.github.io',
+      url: 'https://github.com/walter-202/radioImpacto',
     },
     website: {
       icon: <TbWorld />,
-      url: 'https://walter-202.github.io/radioImpacto.github.io/',
+      url: 'https://walter-202.github.io/radioImpacto',
     },
     imgUrl: radio,
   },
@@ -31,7 +31,7 @@ export const projects = [
     stack: 'HTML CSS JavaScript PHP MySql AJAX Jquery',
     gitHubUrl: {
       icon: <GrGithub />,
-      url: 'https://github.com/walter-202/voswork.github.io',
+      url: 'https://github.com/walter-202/voswork-bol',
     },
     website: {
       icon: <TbWorld />,

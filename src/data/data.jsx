@@ -42,7 +42,7 @@ const sideBarMenu = [
     url: '/proyectos',
   },
   {
-    text: 'Contactame',
+    text: 'Contáctame',
     icon: <RiContactsLine className="link-icon" />,
     url: '/contacto',
   },
@@ -73,86 +73,66 @@ const skillSet = [
   {
     icon: <AiFillHtml5 className="skills-icon switch__color" />,
     spanText: 'HTML',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/HTML',
   },
   {
     icon: <DiCss3 className="skills-icon switch__color" />,
     spanText: 'CSS',
-    url: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
   },
   {
     icon: <IoLogoJavascript className="skills-icon switch__color" />,
     spanText: 'JAVASCRIPT',
-    url: 'https://developer.mozilla.org/en-US/docs/Learn/JavaScript',
   },
   {
     icon: <SiSass className="skills-icon switch__color" />,
     spanText: 'SASS',
-    url: '',
   },
 
   {
     icon: <BsBootstrapFill className="skills-icon switch__color" />,
     spanText: 'BOOTSTRAP',
-    url: '',
   },
 
   {
     icon: <SiJquery className="skills-icon switch__color" />,
     spanText: 'JQUERY',
-    url: '',
   },
   {
     icon: <FaPhotoVideo className="skills-icon switch__color" />,
     spanText: 'Photoshop & Animations',
-    url:
-      'https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/GitHub',
   },
   {
     icon: <SiFlutter className="skills-icon switch__color" />,
     spanText: 'FLUTTER',
-    url:
-      'https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/GitHub',
   },
   {
     icon: <RiReactjsLine className="skills-icon switch__color" />,
     spanText: 'REACT JS',
-    url:
-      'https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started',
   },
 
   {
     icon: <FaNodeJs className="skills-icon switch__color" />,
     spanText: 'NODE',
-    url:
-      'https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs',
   },
 
   {
     icon: <DiMongodb className="skills-icon switch__color" />,
     spanText: 'MONGO DB',
-    url: '',
   },
   {
     icon: <SiMysql className="skills-icon switch__color" />,
     spanText: 'MySQL',
-    url:
-      'https://www.mysql.com',
   },
   {
     icon: <SiPhp className="skills-icon switch__color" />,
     spanText: 'PHP',
-    url: 'https://php.net',
   },
   {
     icon: <FiFigma className="skills-icon switch__color" />,
     spanText: 'Figma',
-    url: 'https://figma.com',
   },
   {
     icon: <SiPhpmyadmin className="skills-icon switch__color" />,
     spanText: 'PhpMyAdmin',
-    url: 'https://google.com',
   },
 ]
 
