@@ -46,7 +46,7 @@ const About = () => {
                 indexLetter={15}
               />
             </h2>
-            <Fade cascade duration={1100} delay={300} up>
+            <Fade cascade duration={900} delay={200} up>
               <p>
                 Soy un ambicioso programador FullStack que va aprendiendo mediante cursos en línea.
               </p>

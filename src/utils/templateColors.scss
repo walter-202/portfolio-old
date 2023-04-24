@@ -34,8 +34,8 @@
     stroke: rgb(16, 219, 246);
   }
   .skill-container:hover .skills-icon,
-  .skill__name{
-    color: var(--hover-color);
+  .skill-container:hover .skill__name{
+    color: var(--primary-text-color);
   }
 }
 
@@ -74,8 +74,8 @@
     stroke: rgb(53, 245, 136);
   }
   .skill-container:hover .skills-icon,
-  .skill__name{
-    color: var(--hover-color);
+  .skill-container:hover .skill__name{
+    color: var(--primary-text-color);
   }
 }
 
@@ -89,11 +89,11 @@
   h4,
   .nav__links:hover,
   .link-icon {
-    color: rgb(123, 255, 71);
+    color: #84cc16;
   }
 
   .fill__color {
-    fill: rgb(123, 255, 71);
+    fill: #84cc16;
   }
   .switch__bg,
   .skill-container::after,
@@ -103,19 +103,19 @@
   .-heading::before,
   .form-input-group input + span::after,
   .form-input-group textarea + span::after {
-    background-color: rgb(123, 255, 71);
+    background-color: #84cc16;
   }
   .switch__border-color,
   .input-search:focus,
   .active-mode {
-    border: 1px solid rgb(123, 255, 71);
+    border: 1px solid #84cc16;
   }
   .switch__stroke-color {
-    stroke: rgb(123, 255, 71);
+    stroke: #84cc16;
   }
   .skill-container:hover .skills-icon,
-  .skill__name{
-    color: var(--hover-color);
+  .skill-container:hover .skill__name{
+    color: var(--primary-text-color);
   }
 }
 
@@ -153,8 +153,8 @@
     stroke: #f05d46;
   }
   .skill-container:hover .skills-icon,
-  .skill__name{
-    color: var(--hover-color);
+  .skill-container:hover .skill__name{
+    color: var(--primary-text-color);
   }
 }
 
@@ -193,8 +193,8 @@
     stroke: #fdae38;
   }
   .skill-container:hover .skills-icon,
-  .skill__name{
-    color: var(--hover-color);
+  .skill-container:hover .skill__name{
+    color: var(--primary-text-color);
   }
 }
 
@@ -233,8 +233,8 @@
     stroke: var(--color-tem);
   }
   .skill-container:hover .skills-icon,
-  .skill__name{
-    color: var(--hover-color);
+  .skill-container:hover .skill__name{
+    color: var(--primary-text-color);
   }
 }
 
@@ -273,8 +273,8 @@
     stroke: #a37346;
   }
   .skill-container:hover .skills-icon,
-  .skill__name{
-    color: var(--hover-color);
+  .skill-container:hover .skill__name{
+    color: var(--primary-text-color);
   }
 }
 

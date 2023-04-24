@@ -96,7 +96,7 @@
 }
 
 .contact-button:hover span.text {
-  color: var(--primary-text-color);
+  color: var(--primary-bg);
 }
 
 .submit-button {
@@ -110,7 +110,7 @@
 }
 
 .submit-button:hover {
-  color: var(--primary-text-color);
+  color: var(--hover-color);
 }
 .scroll__wrapper {
   display: flex;

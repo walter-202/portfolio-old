@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 
 // pages
 import {
@@ -18,7 +18,7 @@ import './utils/templateColors.scss'
 
 const App = () => {
   return (
-    <BrowserRouter basename='/portfolio/'>
+    <HashRouter >
       <Sidebar />
       <ThemeTemplate />
       <Routes>
@@ -29,7 +29,7 @@ const App = () => {
         <Route path="/error" element={<Tutorial />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

@@ -21,7 +21,7 @@
   --light-bg: #ddd;
   --typical-color: rgb(0, 0, 0);
   --theme-wrapper-bg: #252423;
-  --primary-text-color: #878787;
+  --primary-text-color: #252423;
   --hover-color: #fff;
 }
 body {
@@ -62,7 +62,7 @@ ul {
 }
 a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--anchor-color);
 }
 
 .fake-big {
@@ -79,14 +79,14 @@ a {
 .wrapper.light-mode {
   --primary-bg: #fbf8f8;
   --random-color: #cdcaca;
-  --primary-color: #504d4b;
-  --color-tem: #504d4b;
+  --primary-color: #d97706;
+  --color-tem: #d97706;
   --second-primary-color: #000;
   --primary-text-color: #fff;
-  --anchor-color: #cc6c06;
+  --anchor-color: #737373;
   --sideBar-bg: #dddddd;
   --box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);;
-  --light-bg: #504d4b;
+  --light-bg: #d97706;
   --typical-color: rgb(40, 40, 39);
   --theme-wrapper-bg: #ffffff;
   --hover-color: #1b1b1b;
