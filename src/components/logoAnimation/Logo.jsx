@@ -4,48 +4,62 @@ import gsap from 'gsap'
 import './logo.scss'
 
 const Logo = () => {
-  const bgRef = useRef(null)
-  const outLineRef = useRef(null)
-  const outLineRef2 = useRef(null)
-  const solidLogoRef = useRef(null)
   const containerRef = useRef(null)
+  const solidLogoRef = useRef(null)
+  const outlinePathRef = useRef(null)
+  const outlinePathRef2 = useRef(null)
 
   useGSAP(() => {
-    const timeline = gsap.timeline()
-    
-    setTimeout(() => {
-      timeline
-        .to(bgRef.current, {
-          duration: 1,
-          opacity: 1,
-        })
-        .from(outLineRef.current, {
-          strokeDasharray: "100%",
-          strokeDashoffset: "100%",
-          duration: 4,
-        })
-        .from(outLineRef2.current, {
-          strokeDasharray: "100%",
-          strokeDashoffset: "100%",
-          duration: 4,
-        })
+    const ctx = gsap.context(() => {
+      // Initial setup
+      gsap.set([outlinePathRef.current, outlinePathRef2.current], {
+        strokeDasharray: path => path.getTotalLength(),
+        strokeDashoffset: path => path.getTotalLength(),
+        opacity: 1
+      })
+      
+      gsap.set(solidLogoRef.current, { opacity: 0 })
 
-      gsap.fromTo(
-        solidLogoRef.current,
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 0.5,
-          delay: 4,
-          duration: 8,
-        }
-      )
-    }, 4000)
-  }, { scope: containerRef })
+      // Main animation timeline
+      const tl = gsap.timeline({
+        defaults: { ease: "power2.inOut" }
+      })
+
+      tl.to([outlinePathRef.current, outlinePathRef2.current], {
+        strokeDashoffset: 0,
+        duration: 2.5,
+        stagger: 0.3
+      })
+      .to(solidLogoRef.current, {
+        opacity: 1,
+        duration: 1,
+        ease: "power1.inOut"
+      }, "-=0.5")
+
+      // Hover animation setup
+      const hoverTl = gsap.timeline({ paused: true })
+      hoverTl
+        .to(solidLogoRef.current, {
+          scale: 1.05,
+          duration: 0.3,
+          ease: "power2.out"
+        })
+        .to([outlinePathRef.current, outlinePathRef2.current], {
+          stroke: "var(--hover-color)",
+          duration: 0.3
+        }, 0)
+
+      // Add hover interactivity
+      containerRef.current.addEventListener("mouseenter", () => hoverTl.play())
+      containerRef.current.addEventListener("mouseleave", () => hoverTl.reverse())
+
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [])
 
   return (
-    <div className="logo-container switch__stroke-color" ref={containerRef}>
+    <div className="logo-container" ref={containerRef}>
       <svg
         ref={solidLogoRef}
         xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +68,7 @@ const Logo = () => {
       >
         <path 
           className="fill__color home-logo" 
-          d="M -50 110 L 0 0 L 50 110 L 127 -67 H 93 L 50 30 L 0 -75 L -50 30 L -92 -67 H -127 L -50 110 " 
+          d="M -50 110 L 0 0 L 50 110 L 127 -67 H 93 L 50 30 L 0 -75 L -50 30 L -92 -67 H -127 L -50 110"
         />
         <path  
           d="M -51 -13 L 0 -100 L 50 -10 L 60 -50 L 0 -160 L -60 -50 L -51 -13" 
@@ -63,18 +77,24 @@ const Logo = () => {
       </svg>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="home-logo animate-logo-2"
+        className="home-logo outline-logo"
         viewBox="-127.1 -160.1 254.2 270.2"
       >
         <path
-          ref={outLineRef}
-          className="solid-logo"
-          d="M -50 110 L 0 0 L 50 110 L 127 -67 H 93 L 50 30 L 0 -75 L -50 30 L -92 -67 H -127 L -50 110" 
+          ref={outlinePathRef}
+          className="logo-path"
+          fill="none"
+          stroke="var(--color-tem)"
+          strokeWidth="1"
+          d="M -50 110 L 0 0 L 50 110 L 127 -67 H 93 L 50 30 L 0 -75 L -50 30 L -92 -67 H -127 L -50 110"
         />
         <path
-          className="solid-logo"
+          ref={outlinePathRef2}
+          className="logo-path"
+          fill="none"
+          stroke="var(--color-tem)"
+          strokeWidth="1"
           d="M -51 -13 L 0 -100 L 50 -10 L 60 -50 L 0 -160 L -60 -50 L -51 -13"
-          ref={outLineRef2}
         />
       </svg>
     </div>

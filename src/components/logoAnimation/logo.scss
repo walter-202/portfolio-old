@@ -4,26 +4,34 @@
   position: absolute;
   left: 63%;
   display: block;
-  animation: fadeIn 10s linear;
-  opacity: 0;
+  opacity: 1;
+  cursor: pointer;
+  transform-origin: center;
+  will-change: transform;
 
   svg {
     width: 100%;
     height: auto;
-  }
-  .solid-logo {
     position: absolute;
-    top: auto;
-    right: auto;
+    top: 0;
     left: 0;
-    width: 100%;
-    opacity: 1;
+  }
+
+  .solid-logo {
     z-index: 1;
   }
+
+  .outline-logo {
+    z-index: 2;
+  }
+
+  .logo-path {
+    will-change: stroke-dashoffset;
+  }
 }
 
-.logo-container {
-  stroke: var(--color-tem);
-  stroke-width: 1;
+@media screen and (max-width: 1150px) {
+  .logo-container {
+    display: none;
+  }
 }
-
