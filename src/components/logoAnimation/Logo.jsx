@@ -13,8 +13,8 @@ const Logo = () => {
     const ctx = gsap.context(() => {
       // Initial setup
       gsap.set([outlinePathRef.current, outlinePathRef2.current], {
-        strokeDasharray: path => path.getTotalLength(),
-        strokeDashoffset: path => path.getTotalLength(),
+        strokeDasharray: path => path.getLength(),
+        strokeDashoffset: path => path.getLength(),
         opacity: 1
       })
       
