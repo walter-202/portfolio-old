@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
-import { DrawSVGPlugin } from 'gsap-trial/DrawSVGPlugin'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import './logo.scss'
 
 const Logo = () => {
@@ -8,10 +8,9 @@ const Logo = () => {
   const outLineRef = useRef(null)
   const outLineRef2 = useRef(null)
   const solidLogoRef = useRef(null)
+  const containerRef = useRef(null)
 
-  useEffect(() => {
-    gsap.registerPlugin(DrawSVGPlugin)
-    
+  useGSAP(() => {
     const timeline = gsap.timeline()
     
     setTimeout(() => {
@@ -21,11 +20,13 @@ const Logo = () => {
           opacity: 1,
         })
         .from(outLineRef.current, {
-          drawSVG: 0,
+          strokeDasharray: "100%",
+          strokeDashoffset: "100%",
           duration: 4,
         })
         .from(outLineRef2.current, {
-          drawSVG: 0,
+          strokeDasharray: "100%",
+          strokeDashoffset: "100%",
           duration: 4,
         })
 
@@ -41,14 +42,10 @@ const Logo = () => {
         }
       )
     }, 4000)
-
-    return () => {
-      timeline.kill()
-    }
-  }, [])
+  }, { scope: containerRef })
 
   return (
-    <div className="logo-container switch__stroke-color" ref={bgRef}>
+    <div className="logo-container switch__stroke-color" ref={containerRef}>
       <svg
         ref={solidLogoRef}
         xmlns="http://www.w3.org/2000/svg"
