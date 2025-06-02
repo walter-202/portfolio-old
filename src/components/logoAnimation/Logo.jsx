@@ -1,11 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 import './logo.scss'
-
-// Register the plugin
-gsap.registerPlugin(DrawSVGPlugin)
 
 const Logo = () => {
   const containerRef = useRef(null)
@@ -16,20 +12,15 @@ const Logo = () => {
   useGSAP(() => {
     const ctx = gsap.context(() => {
       // Initial setup
-      gsap.set([outlinePathRef.current, outlinePathRef2.current], {
-        drawSVG: 0,
-        opacity: 1
-      })
-      
       gsap.set(solidLogoRef.current, { opacity: 0 })
-
+      
       // Main animation timeline
       const tl = gsap.timeline({
         defaults: { ease: "power2.inOut" }
       })
 
-      tl.to([outlinePathRef.current, outlinePathRef2.current], {
-        drawSVG: "100%",
+      tl.from([outlinePathRef.current, outlinePathRef2.current], {
+        strokeDasharray: "0 1000",
         duration: 2.5,
         stagger: 0.3
       })
