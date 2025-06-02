@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 import './logo.scss'
+
+// Register the plugin
+gsap.registerPlugin(DrawSVGPlugin)
 
 const Logo = () => {
   const containerRef = useRef(null)
@@ -13,8 +17,7 @@ const Logo = () => {
     const ctx = gsap.context(() => {
       // Initial setup
       gsap.set([outlinePathRef.current, outlinePathRef2.current], {
-        strokeDasharray: path => path.getTotalLength(),
-        strokeDashoffset: path => path.getTotalLength(),
+        drawSVG: 0,
         opacity: 1
       })
       
@@ -26,7 +29,7 @@ const Logo = () => {
       })
 
       tl.to([outlinePathRef.current, outlinePathRef2.current], {
-        strokeDashoffset: 0,
+        drawSVG: "100%",
         duration: 2.5,
         stagger: 0.3
       })
