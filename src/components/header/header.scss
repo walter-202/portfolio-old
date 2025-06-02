@@ -6,6 +6,14 @@
   position: relative;
 }
 
+.logo-container {
+  position: absolute;
+  top: 12%;
+  right: 5%;
+  width: 33%;
+  z-index: 1;
+}
+
 .intro-page h1 {
   font-size: 10rem;
   line-height: 10rem;
@@ -17,7 +25,6 @@
 .intro-page h1 .home-logo {
   width: 1em;
   animation: fadeIn 2s linear;
-  // animation-delay: 1.4s;
   fill: var(--color-tem);
 }
 
@@ -145,9 +152,7 @@
   }
 }
 
-
 // extra large screens
-
 @media screen and (max-width: 1900px) {
   .intro-page h1 {
     font-size: 6rem;
@@ -160,7 +165,6 @@
 }
 
 // large screens
-
 @media screen and (max-width: 1024px) {
   .intro-page h1 {
     font-size: 5.5rem;
@@ -175,6 +179,10 @@
     max-width: 220px;
     height: 50px;
     line-height: 50px;
+  }
+  
+  .logo-container {
+    display: none;
   }
 }
 
@@ -200,6 +208,7 @@
     left: 20vw;
   }
 }
+
 @media screen and (max-width: 450px) {
   .section-1 {
     min-height: 100vh;
