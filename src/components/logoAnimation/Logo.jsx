@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { DrawSVGPlugin } from '@gsap/shockingly'
+import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 import './logo.scss'
 
 gsap.registerPlugin(DrawSVGPlugin)
