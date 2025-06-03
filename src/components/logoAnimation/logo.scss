@@ -1,13 +1,14 @@
 .logo-container {
-  top: 12%;
-  width: 33%;
   position: absolute;
-  left: 63%;
-  display: block;
+  top: 12%;
+  right: 5%;
+  width: 33%;
+  z-index: 2;
   opacity: 1;
   cursor: pointer;
   transform-origin: center;
   will-change: transform;
+  transition: transform 0.3s ease;
 
   svg {
     width: 100%;
@@ -19,14 +20,21 @@
 
   .solid-logo {
     z-index: 1;
+    transform-origin: center;
+    will-change: transform, opacity;
   }
 
   .outline-logo {
     z-index: 2;
+    .logo-path {
+      will-change: stroke-dasharray, stroke-dashoffset;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
   }
 
-  .logo-path {
-    will-change: stroke-dasharray;
+  &:hover {
+    transform: translateY(-5px);
   }
 }
 

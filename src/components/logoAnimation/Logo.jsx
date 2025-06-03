@@ -1,7 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+import { DrawSVGPlugin } from '@gsap/shockingly'
 import './logo.scss'
+
+gsap.registerPlugin(DrawSVGPlugin)
 
 const Logo = () => {
   const containerRef = useRef(null)
@@ -12,22 +15,33 @@ const Logo = () => {
   useGSAP(() => {
     const ctx = gsap.context(() => {
       // Initial setup
-      gsap.set(solidLogoRef.current, { opacity: 0 })
+      gsap.set([outlinePathRef.current, outlinePathRef2.current], {
+        visibility: "visible",
+        drawSVG: "0%"
+      })
+      
+      gsap.set(solidLogoRef.current, { 
+        opacity: 0,
+        scale: 0.95
+      })
       
       // Main animation timeline
       const tl = gsap.timeline({
-        defaults: { ease: "power2.inOut" }
+        defaults: { 
+          ease: "power2.inOut",
+          duration: 1.5
+        }
       })
 
-      tl.from([outlinePathRef.current, outlinePathRef2.current], {
-        strokeDasharray: "0 1000",
-        duration: 2.5,
-        stagger: 0.3
+      tl.to([outlinePathRef.current, outlinePathRef2.current], {
+        drawSVG: "100%",
+        stagger: 0.2
       })
       .to(solidLogoRef.current, {
         opacity: 1,
-        duration: 1,
-        ease: "power1.inOut"
+        scale: 1,
+        duration: 0.8,
+        ease: "back.out(1.7)"
       }, "-=0.5")
 
       // Hover animation setup
@@ -79,7 +93,7 @@ const Logo = () => {
           className="logo-path"
           fill="none"
           stroke="var(--color-tem)"
-          strokeWidth="1"
+          strokeWidth="2"
           d="M -50 110 L 0 0 L 50 110 L 127 -67 H 93 L 50 30 L 0 -75 L -50 30 L -92 -67 H -127 L -50 110"
         />
         <path
@@ -87,7 +101,7 @@ const Logo = () => {
           className="logo-path"
           fill="none"
           stroke="var(--color-tem)"
-          strokeWidth="1"
+          strokeWidth="2"
           d="M -51 -13 L 0 -100 L 50 -10 L 60 -50 L 0 -160 L -60 -50 L -51 -13"
         />
       </svg>
