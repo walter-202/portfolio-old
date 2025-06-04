@@ -36,52 +36,43 @@ const Header = () => {
   return (
     <>
       <section className="section-1 header__container section__padding">
-        <div className="logo-container">
-          <Logo />
-        </div>
-        <main className="intro-page">
-          <h1 arial-label="Soy Walter Aguilar desarrollador web Full Stack">
-            <span className={letterClass}>Y</span>
-            <span className={`${letterClass} _12`}>o</span>
-            <span className={`${letterClass} _13`}>  </span>
-            <span className={`${letterClass} _14`}>s</span>
-            <span className={`${letterClass} _15`}>o</span>
-            <span className={`${letterClass} _16`}>y</span> {''}
-            <br />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="home-logo"
-              viewBox="-127.1 -160.1 264.2 270.2"
-            >
-              <path className="lower-logo-color fill__color home-logo animate-logo-1" d="M -50 110 L 0 0 L 50 110 L 127 -67 H 93 L 50 30 L 0 -75 L -50 30 L -92 -67 H -127 L -50 110 " />
-              <path d="M -50 -10 L 0 -100 L 50 -10 L 60 -50 L 0 -160 L -60 -50" fill="#797878" className="animate-logo-2" />
-            </svg>
+        <div className="header-content">
+          <main className="intro-page">
+            <h1 arial-label="Soy Walter Aguilar desarrollador web Full Stack">
+              <span className={letterClass}>Y</span>
+              <span className={`${letterClass} _12`}>o</span>
+              <span className={`${letterClass} _13`}>  </span>
+              <span className={`${letterClass} _14`}>s</span>
+              <span className={`${letterClass} _15`}>o</span>
+              <span className={`${letterClass} _16`}>y</span> {''}
+              <br />
+              <Blast
+                letterClass={letterClass}
+                arrayStr={nameArray}
+                indexLetter={17}
+              />
+              <br />
+              <Blast
+                letterClass={letterClass}
+                arrayStr={jobArray}
+                indexLetter={22}
+              />
+            </h1>
 
-            <Blast
-              letterClass={letterClass}
-              arrayStr={nameArray}
-              indexLetter={17}
-            />
-            <br />
-            <Blast
-              letterClass={letterClass}
-              arrayStr={jobArray}
-              indexLetter={22}
-            />
-          </h1>
-
-          <p className="text-desc">WEB DEVELOPER /  DISEÑADOR UI/UX</p>
-          <Link to="/contacto" className="contact-button">
-            <div>
-              <span className="bg switch__bg"></span>
-              <span className="base switch__border-color"></span>
-              <span className="text">Contáctame</span>
+            <p className="text-desc">WEB DEVELOPER /  DISEÑADOR UI/UX</p>
+            <Link to="/contacto" className="contact-button">
+              <div>
+                <span className="bg switch__bg"></span>
+                <span className="base switch__border-color"></span>
+                <span className="text">Contáctame</span>
+              </div>
+            </Link>
+            <div className="scroll__wrapper switch__color">
+              <MdArrowDropDown className="scroll__down switch__color" />
             </div>
-          </Link>
-          <div className="scroll__wrapper switch__color">
-            <MdArrowDropDown className="scroll__down switch__color" />
-          </div>
-        </main>
+          </main>
+        </div>
+        <Logo />
       </section>
     </>
   )
