@@ -4,7 +4,7 @@ import gsap from 'gsap'
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 import './logo.scss'
 
-gsap.registerPlugin(DrawSVGPlugin)
+gsap.registerPlugin(useGSAP, DrawSVGPlugin)
 
 const Logo = () => {
   const containerRef = useRef(null)
