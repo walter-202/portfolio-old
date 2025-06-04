@@ -8,7 +8,7 @@
   cursor: pointer;
   transform-origin: center;
   will-change: transform;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-base);
 
   svg {
     width: 100%;
@@ -16,25 +16,34 @@
     position: absolute;
     top: 0;
     left: 0;
-  }
-
-  .solid-logo {
-    z-index: 1;
-    transform-origin: center;
-    will-change: transform, opacity;
-  }
-
-  .outline-logo {
-    z-index: 2;
-    .logo-path {
-      will-change: stroke-dasharray, stroke-dashoffset;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    
+    &.solid-logo {
+      z-index: 1;
+      will-change: transform, opacity;
+      
+      path {
+        transition: fill var(--transition-base);
+      }
+    }
+    
+    &.outline-logo {
+      z-index: 2;
+      pointer-events: none;
+      
+      .logo-path {
+        will-change: stroke-dasharray;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
     }
   }
 
   &:hover {
     transform: translateY(-5px);
+    
+    .solid-logo path {
+      fill: var(--color-tem);
+    }
   }
 }
 
