@@ -4,44 +4,51 @@
   align-items: center;
   position: relative;
   padding-top: 2rem;
+  overflow: hidden;
 }
 
 .header-content {
   flex: 1;
   z-index: 1;
+  max-width: 100%;
 }
 
 .intro-page {
   position: relative;
   
   h1 {
-    font-size: clamp(2.5rem, 8vw, 6.5rem);
+    font-size: clamp(2.5rem, 6vw, 6.5rem);
     line-height: 1.1;
     letter-spacing: -2px;
     font-weight: 700;
     color: var(--color-tem);
     font-family: 'Helvetica Neue', sans-serif;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+    hyphens: auto;
   }
 }
 
 .text-desc {
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  font-size: clamp(0.875rem, 1.2vw, 1.25rem);
   margin: 2rem 0;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   animation: fadeIn 1s 1.4s backwards;
   max-width: 60ch;
+  line-height: 1.4;
 }
 
 .contact-button {
   display: inline-block;
   width: 100%;
-  max-width: 200px;
-  height: 50px;
-  line-height: 50px;
+  max-width: clamp(180px, 25vw, 220px);
+  height: clamp(45px, 6vw, 55px);
+  line-height: clamp(45px, 6vw, 55px);
   position: relative;
   margin: 2rem 0;
   animation: fadeInAnimation 1s 1.8s backwards;
   white-space: nowrap;
+  font-size: clamp(0.875rem, 1vw, 1rem);
 
   div {
     width: 100%;
@@ -83,6 +90,9 @@
     height: 100%;
     position: absolute;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &:hover span.text {
@@ -104,13 +114,14 @@
     content: 'scroll down';
     position: absolute;
     top: 100%;
-    font-size: 0.875rem;
+    font-size: clamp(0.75rem, 1vw, 0.875rem);
     letter-spacing: 1px;
+    margin-top: 0.5rem;
   }
 }
 
 .scroll__down {
-  font-size: 4rem;
+  font-size: clamp(3rem, 5vw, 4rem);
   animation: scroll 2s ease-in alternate-reverse infinite;
 }
 
@@ -120,49 +131,138 @@
   100% { transform: translateY(5px); }
 }
 
-@media screen and (min-width: 1201px) {
+// Large desktop screens
+@media screen and (min-width: 1400px) {
+  .section-1 {
+    padding-left: 12rem;
+  }
+  
   .intro-page h1 {
     font-size: 6.5rem;
     line-height: 1.1;
   }
+  
+  .text-desc {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section-1 {
+    padding-left: 10rem;
+  }
+}
+
+// Medium screens
+@media screen and (max-width: 1199px) {
+  .section-1 {
+    padding: 2rem 3rem;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .header-content {
+    order: 2;
+    margin-top: 2rem;
+  }
+  
+  .intro-page h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+  
+  .scroll__wrapper {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 2rem;
+  }
 }
 
 @media screen and (max-width: 1024px) {
+  .section-1 {
+    padding: 2rem;
+    min-height: 90vh;
+  }
+  
   .intro-page h1 {
-    font-size: 5rem;
-    line-height: 1.2;
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    margin-bottom: 1rem;
   }
   
   .text-desc {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .intro-page h1 {
-    font-size: 3.5rem;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    margin: 1.5rem 0;
   }
   
   .contact-button {
-    max-width: 170px;
-    height: 45px;
-    line-height: 45px;
+    max-width: 200px;
+    height: 50px;
+    line-height: 50px;
+    margin: 1.5rem auto;
   }
 }
 
-@media screen and (max-width: 450px) {
+// Small screens
+@media screen and (max-width: 768px) {
+  .section-1 {
+    padding: 1.5rem;
+    min-height: 85vh;
+  }
+  
   .intro-page h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: -1px;
   }
   
   .text-desc {
     font-size: 0.875rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .contact-button {
+    max-width: 180px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 0.875rem;
+  }
+}
+
+// Extra small screens
+@media screen and (max-width: 480px) {
+  .section-1 {
+    padding: 1rem;
+    min-height: 80vh;
+  }
+  
+  .intro-page h1 {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    line-height: 1.2;
+  }
+  
+  .text-desc {
+    font-size: 0.8rem;
+    margin: 1rem 0;
+    max-width: 90%;
   }
   
   .contact-button {
     max-width: 160px;
     height: 40px;
     line-height: 40px;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
+  }
+  
+  .scroll__wrapper {
+    margin-top: 1rem;
+    
+    &::after {
+      font-size: 0.75rem;
+    }
+  }
+  
+  .scroll__down {
+    font-size: 2.5rem;
   }
 }

@@ -38,7 +38,7 @@ const Header = () => {
       <section className="section-1 header__container section__padding">
         <div className="header-content">
           <main className="intro-page">
-            <h1 arial-label="Soy Walter Aguilar desarrollador web Full Stack">
+            <h1 aria-label="Soy Walter Aguilar desarrollador web Full Stack">
               <span className={letterClass}>Y</span>
               <span className={`${letterClass} _12`}>o</span>
               <span className={`${letterClass} _13`}>  </span>
@@ -55,7 +55,7 @@ const Header = () => {
               <Blast
                 letterClass={letterClass}
                 arrayStr={jobArray}
-                indexLetter={22}
+                indexLetter={30}
               />
             </h1>
 

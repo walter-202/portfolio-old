@@ -1,11 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin'
 import './logo.scss'
-
-// Register GSAP plugins
-gsap.registerPlugin(DrawSVGPlugin);
 
 const Logo = () => {
   const containerRef = useRef(null)
@@ -17,7 +13,7 @@ const Logo = () => {
     const ctx = gsap.context(() => {
       // Initial setup
       gsap.set([outlinePathRef.current, outlinePathRef2.current], {
-        drawSVG: "0%",
+        strokeDasharray: "0,1000",
         stroke: "var(--color-tem)",
         strokeWidth: 2
       })
@@ -37,7 +33,7 @@ const Logo = () => {
       })
 
       tl.to([outlinePathRef.current, outlinePathRef2.current], {
-        drawSVG: "100%",
+        strokeDasharray: "1000,0",
         duration: 1.5,
         stagger: 0.2
       })
@@ -62,8 +58,10 @@ const Logo = () => {
         }, 0)
 
       // Add hover interactivity
-      containerRef.current.addEventListener("mouseenter", () => hoverTl.play())
-      containerRef.current.addEventListener("mouseleave", () => hoverTl.reverse())
+      if (containerRef.current) {
+        containerRef.current.addEventListener("mouseenter", () => hoverTl.play())
+        containerRef.current.addEventListener("mouseleave", () => hoverTl.reverse())
+      }
     }, containerRef)
 
     return () => ctx.revert()
