@@ -1,13 +1,9 @@
 .logo-container {
-  position: absolute;
-  top: 50%;
-  right: 5%;
-  width: clamp(250px, 35vw, 500px);
+  width: clamp(250px, 30vw, 400px);
   height: auto;
-  transform: translateY(-50%);
-  z-index: 1;
   cursor: pointer;
   transition: transform var(--transition-base);
+  position: relative;
 
   svg {
     width: 100%;
@@ -38,7 +34,7 @@
   }
 
   &:hover {
-    transform: translateY(calc(-50% - 5px));
+    transform: translateY(-5px);
     
     .solid-logo path {
       fill: var(--hover-color);
@@ -49,59 +45,39 @@
 // Large screens
 @media screen and (min-width: 1400px) {
   .logo-container {
-    width: clamp(350px, 30vw, 600px);
-    right: 8%;
+    width: clamp(350px, 25vw, 500px);
   }
 }
 
 @media screen and (min-width: 1200px) {
   .logo-container {
-    width: clamp(300px, 32vw, 550px);
-    right: 6%;
+    width: clamp(300px, 28vw, 450px);
   }
 }
 
 // Medium screens
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1199px) and (min-width: 769px) {
   .logo-container {
-    width: clamp(200px, 40vw, 400px);
-    right: 3%;
+    width: clamp(250px, 35vw, 350px);
   }
 }
 
 @media screen and (max-width: 1024px) {
   .logo-container {
-    position: relative;
-    top: auto;
-    right: auto;
-    width: 100%;
-    max-width: 300px;
-    margin: 2rem auto 0;
-    transform: none;
-    display: flex;
-    justify-content: center;
-    
-    svg {
-      position: relative;
-    }
-    
-    &:hover {
-      transform: translateY(-3px);
-    }
+    width: clamp(200px, 40vw, 300px);
   }
 }
 
 // Small screens
 @media screen and (max-width: 768px) {
   .logo-container {
-    max-width: 250px;
-    margin: 1.5rem auto 0;
+    width: clamp(180px, 50vw, 250px);
+    margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 480px) {
   .logo-container {
-    max-width: 200px;
-    margin: 1rem auto 0;
+    width: clamp(150px, 60vw, 200px);
   }
 }
