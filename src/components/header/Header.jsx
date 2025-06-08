@@ -70,9 +70,7 @@ const Header = () => {
               </Link>
             </main>
           </div>
-          <div className="logo-section">
-            <Logo />
-          </div>
+          <Logo />
         </div>
         <div className="scroll__wrapper switch__color">
           <MdArrowDropDown className="scroll__down switch__color" />
