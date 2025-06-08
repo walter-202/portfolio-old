@@ -8,6 +8,7 @@
   z-index: 3;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translate(0);
+  
   &::after {
     content: '';
     position: absolute;
@@ -18,12 +19,11 @@
     background-color: var(--typical-color);
   }
 }
-// show sidebar when you click on the icon menu
+
 .show-asideBar {
   transform: translate(-100%);
 }
 
-// logo section in the sidebar
 .logo-section {
   display: flex;
   flex-direction: column;
@@ -31,86 +31,114 @@
   justify-content: center;
   padding-top: 30px;
   z-index: 2;
+  
   span {
-    color: #fff;
+    color: var(--hover-color);
+    font-size: clamp(0.875rem, 1.5vw, 1.2rem);
+    text-align: center;
+    margin-top: 0.5rem;
   }
 }
+
 .sidebar__logo {
-  width: 60px;
+  width: clamp(40px, 8vw, 60px);
   height: auto;
-  fill: #cc6c06;
+  fill: var(--color-tem);
 }
-// the classname that wraps all the element in the sidebar
+
 .aside-wrapper {
-  width: 80%;
+  width: 90%;
   min-height: 90vh;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 1rem 0;
 }
 
-// toggle btn
 .menu-icon,
 .close-btn {
   position: fixed;
   right: 40px;
   top: 40px;
-  color: var(--primary-color);
-  font-size: 1.8rem;
+  color: var(--color-tem);
+  font-size: clamp(1.5rem, 3vw, 1.8rem);
   cursor: pointer;
   display: none;
   transition: all 0.2s linear;
-  z-index: 2;
+  z-index: 999;
 }
+
 .menu-icon:hover {
   transform: translate(5px);
 }
-.close-btn {
-  z-index: 999;
-  position: absolute;
-}
+
 .close-btn:hover {
   transform: rotate(360deg);
 }
 
-// sidebar list element starts here
-
-ul.side-link li {
-  line-height: 2.8;
-  position: relative;
-}
-.nav__links {
-  display: block;
-  transition: all 250ms linear;
-}
-.active-links {
-  color: var(--color-tem);
-}
-
-ul.side-link li .link-icon {
-  font-size: 15px;
-  margin-right: 15px;
-  color: var(--color-tem);
-}
-
-// social media icons
-.social-icon {
-  right: 100px;
-  bottom: 0;
-}
-.social-icon .icon {
-  font-size: 15px;
-  margin-right: 15px;
-  transition: 0.2s linear;
-  color: var(--color-tem);
-  &:hover {
-    color: var(--anchor-color);
+ul.side-link {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  
+  li {
+    line-height: 2.8;
+    position: relative;
+    margin-bottom: 0.5rem;
   }
 }
 
-// for bigger screens
+.nav__links {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.25s ease;
+  color: var(--anchor-color);
+  text-decoration: none;
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
+  
+  &:hover {
+    color: var(--color-tem);
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
 
+.active-links {
+  color: var(--color-tem) !important;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.link-icon {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  margin-right: 0.75rem;
+  color: var(--color-tem);
+  min-width: 20px;
+}
+
+.social-icon {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  
+  a {
+    color: var(--color-tem);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    transition: all 0.2s ease;
+    padding: 0.5rem;
+    border-radius: 50%;
+    
+    &:hover {
+      color: var(--hover-color);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Mobile responsive
 @media screen and (max-width: 1200px) {
   .aside {
     width: 100%;
@@ -118,40 +146,94 @@ ul.side-link li .link-icon {
     overflow: hidden;
     transition: all 350ms cubic-bezier(0.075, 0.82, 0.165, 1);
   }
+  
   .open-sidebar {
     height: 100%;
     overflow: visible;
   }
+  
   .menu-icon,
   .close-btn {
     display: block;
   }
-  .social-icon {
+  
+  .aside-wrapper {
     text-align: center;
+    padding: 2rem 1rem;
+    width: 95%;
+  }
+  
+  ul.side-link {
+    margin: 3rem 0;
+    
+    li {
+      line-height: 3.5;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .nav__links {
+    justify-content: center;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+    padding: 1rem;
+  }
+  
+  .link-icon {
+    display: none;
+  }
+  
+  .social-icon {
+    margin-top: 2rem;
+    gap: 1.5rem;
+    
+    a {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      padding: 1rem;
+      
+      &:hover {
+        animation: rubberBand 1s;
+      }
+    }
+  }
+  
+  .logo-section span {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    margin-top: 1rem;
+  }
+  
+  .sidebar__logo {
+    width: clamp(60px, 12vw, 80px);
   }
 }
 
-// small devices
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 480px) {
+  .menu-icon,
+  .close-btn {
+    right: 20px;
+    top: 20px;
+  }
+  
   .aside-wrapper {
-    text-align: center;
+    padding: 1.5rem 0.5rem;
   }
+  
   ul.side-link li {
-    line-height: 2.8;
-    font-weight: bold;
+    line-height: 3;
+    margin-bottom: 0.75rem;
   }
-  ul.side-link li .link-icon {
-    display: none;
+  
+  .nav__links {
+    font-size: 1rem;
+    padding: 0.75rem;
   }
-
-  // social media icons
+  
   .social-icon {
-    text-align: center;
-  }
-  .social-icon .icon {
-    font-size: 25px;
-    &:hover {
-      animation: rubberBand 1s;
+    gap: 1rem;
+    
+    a {
+      font-size: 1.5rem;
+      padding: 0.75rem;
     }
   }
 }

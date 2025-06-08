@@ -150,26 +150,7 @@
   100% { transform: translateY(5px); }
 }
 
-// Large desktop screens
-@media screen and (min-width: 1400px) {
-  .section-1 {
-    padding-left: 12rem;
-    padding-right: 3rem;
-  }
-  
-  .header-layout {
-    gap: 4rem;
-  }
-  
-  .intro-page h1 {
-    font-size: 5.5rem;
-  }
-  
-  .text-desc {
-    font-size: 1.25rem;
-  }
-}
-
+// Responsive breakpoints - simplified
 @media screen and (min-width: 1200px) {
   .section-1 {
     padding-left: 10rem;
@@ -177,55 +158,10 @@
   }
   
   .header-layout {
-    gap: 3rem;
+    gap: 4rem;
   }
 }
 
-// Medium to large screens
-@media screen and (max-width: 1199px) and (min-width: 769px) {
-  .section-1 {
-    padding: 2rem 3rem;
-  }
-  
-  .header-layout {
-    gap: 2rem;
-  }
-  
-  .logo-section {
-    flex: 0 0 300px;
-  }
-}
-
-// Tablet screens
-@media screen and (max-width: 1024px) {
-  .section-1 {
-    padding: 2rem;
-    min-height: 90vh;
-  }
-  
-  .header-layout {
-    gap: 2rem;
-  }
-  
-  .intro-page h1 {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    margin-bottom: 1rem;
-  }
-  
-  .text-desc {
-    font-size: clamp(0.875rem, 2vw, 1rem);
-    margin: 1.5rem 0;
-  }
-  
-  .contact-button {
-    max-width: 200px;
-    height: 50px;
-    line-height: 50px;
-    margin: 1.5rem 0;
-  }
-}
-
-// Small screens - Stack layout
 @media screen and (max-width: 768px) {
   .section-1 {
     padding: 1.5rem;
@@ -267,7 +203,6 @@
   }
 }
 
-// Extra small screens
 @media screen and (max-width: 480px) {
   .section-1 {
     padding: 1rem;
