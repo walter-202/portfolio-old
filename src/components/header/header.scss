@@ -17,12 +17,14 @@
   max-width: 1400px;
   gap: 3rem;
   flex: 1;
+  min-height: 0; // This ensures proper flex behavior
 }
 
 .header-content {
   flex: 1;
   z-index: 2;
   max-width: 100%;
+  min-width: 0; // Prevents flex item from overflowing
 }
 
 .intro-page {
@@ -164,14 +166,12 @@
     flex-direction: column;
     gap: 2rem;
     text-align: center;
+    justify-content: center;
   }
   
   .header-content {
     order: 1;
-  }
-  
-  .logo-section {
-    order: 2;
+    width: 100%;
   }
   
   .intro-page h1 {

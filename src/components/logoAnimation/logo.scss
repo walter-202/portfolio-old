@@ -4,13 +4,15 @@
   cursor: pointer;
   transition: transform var(--transition-base);
   position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   svg {
     width: 100%;
     height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     
     &.solid-logo {
       z-index: 1;
@@ -22,6 +24,9 @@
     }
     
     &.outline-logo {
+      position: absolute;
+      top: 0;
+      left: 0;
       z-index: 2;
       pointer-events: none;
       
@@ -43,15 +48,9 @@
 }
 
 // Large screens
-@media screen and (min-width: 1400px) {
-  .logo-container {
-    width: clamp(350px, 25vw, 500px);
-  }
-}
-
 @media screen and (min-width: 1200px) {
   .logo-container {
-    width: clamp(300px, 28vw, 450px);
+    width: clamp(350px, 25vw, 500px);
   }
 }
 
@@ -62,22 +61,18 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .logo-container {
-    width: clamp(200px, 40vw, 300px);
-  }
-}
-
-// Small screens
+// Small screens - logo goes above content
 @media screen and (max-width: 768px) {
   .logo-container {
-    width: clamp(180px, 50vw, 250px);
-    margin: 0 auto;
+    width: clamp(200px, 50vw, 280px);
+    margin: 0 auto 2rem auto;
+    order: -1; // This moves the logo above the content
   }
 }
 
 @media screen and (max-width: 480px) {
   .logo-container {
-    width: clamp(150px, 60vw, 200px);
+    width: clamp(180px, 60vw, 220px);
+    margin: 0 auto 1.5rem auto;
   }
 }
