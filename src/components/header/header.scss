@@ -80,10 +80,10 @@
     top: 0;
     transform: skewX(-10deg);
     transition: all 0.3s linear;
+    background: transparent; // Will be overridden by theme
   }
 
   &:hover span.bg {
-    background: var(--color-tem);
     width: 110%;
     border-radius: 0 15px 0 15px;
   }
@@ -95,7 +95,7 @@
     top: 0;
     left: 0;
     border-radius: 0 15px 0 15px;
-    border: 1px solid var(--color-tem);
+    // Border will be set by theme
   }
 
   span.text {
@@ -107,6 +107,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--color-tem);
+    transition: color 0.3s ease;
   }
 
   &:hover span.text {

@@ -2,6 +2,9 @@
 
 // Theme template color 1
 #template-1 {
+  --color-tem: rgb(16, 219, 246);
+  --color-tem-rgb: 16, 219, 246;
+  
   .switch__color,
   .active-links,
   h1,
@@ -45,15 +48,24 @@
   .contact-button span.base {
     border: 1px solid rgb(16, 219, 246);
   }
+  .contact-button span.text {
+    color: rgb(16, 219, 246);
+  }
   
   // Logo outline stroke
   .outline-logo .logo-path {
     stroke: rgb(16, 219, 246);
   }
+  .solid-logo path {
+    fill: rgb(16, 219, 246);
+  }
 }
 
 // Theme template color 2
 #template-2 {
+  --color-tem: rgb(53, 245, 136);
+  --color-tem-rgb: 53, 245, 136;
+  
   .switch__color,
   .active-links,
   h1,
@@ -98,15 +110,24 @@
   .contact-button span.base {
     border: 1px solid rgb(53, 245, 136);
   }
+  .contact-button span.text {
+    color: rgb(53, 245, 136);
+  }
   
   // Logo outline stroke
   .outline-logo .logo-path {
     stroke: rgb(53, 245, 136);
   }
+  .solid-logo path {
+    fill: rgb(53, 245, 136);
+  }
 }
 
 // Theme template color 3
 #template-3 {
+  --color-tem: #84cc16;
+  --color-tem-rgb: 132, 204, 22;
+  
   .switch__color,
   .active-links,
   h1,
@@ -151,15 +172,24 @@
   .contact-button span.base {
     border: 1px solid #84cc16;
   }
+  .contact-button span.text {
+    color: #84cc16;
+  }
   
   // Logo outline stroke
   .outline-logo .logo-path {
     stroke: #84cc16;
   }
+  .solid-logo path {
+    fill: #84cc16;
+  }
 }
 
 // Theme template color 4
 #template-4 {
+  --color-tem: rgb(240, 93, 70);
+  --color-tem-rgb: 240, 93, 70;
+  
   .switch__color,
   .active-links,
   h1,
@@ -203,15 +233,24 @@
   .contact-button span.base {
     border: 1px solid rgb(240, 93, 70);
   }
+  .contact-button span.text {
+    color: rgb(240, 93, 70);
+  }
   
   // Logo outline stroke
   .outline-logo .logo-path {
     stroke: rgb(240, 93, 70);
   }
+  .solid-logo path {
+    fill: rgb(240, 93, 70);
+  }
 }
 
 // Theme template color 5
 #template-5 {
+  --color-tem: #fdae38;
+  --color-tem-rgb: 253, 174, 56;
+  
   .switch__color,
   .active-links,
   h1,
@@ -256,10 +295,16 @@
   .contact-button span.base {
     border: 1px solid #fdae38;
   }
+  .contact-button span.text {
+    color: #fdae38;
+  }
   
   // Logo outline stroke
   .outline-logo .logo-path {
     stroke: #fdae38;
+  }
+  .solid-logo path {
+    fill: #fdae38;
   }
 }
 
@@ -309,15 +354,24 @@
   .contact-button span.base {
     border: 1px solid var(--color-tem);
   }
+  .contact-button span.text {
+    color: var(--color-tem);
+  }
   
   // Logo outline stroke
   .outline-logo .logo-path {
     stroke: var(--color-tem);
   }
+  .solid-logo path {
+    fill: var(--color-tem);
+  }
 }
 
 // Theme template color 7
 #template-7 {
+  --color-tem: #a37346;
+  --color-tem-rgb: 163, 115, 70;
+  
   .switch__color,
   .active-links,
   h1,
@@ -362,9 +416,15 @@
   .contact-button span.base {
     border: 1px solid #a37346;
   }
+  .contact-button span.text {
+    color: #a37346;
+  }
   
   // Logo outline stroke
   .outline-logo .logo-path {
     stroke: #a37346;
+  }
+  .solid-logo path {
+    fill: #a37346;
   }
 }

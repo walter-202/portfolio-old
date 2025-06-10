@@ -20,6 +20,7 @@
       
       path {
         transition: fill var(--transition-base);
+        fill: var(--color-tem);
       }
     }
     
@@ -34,6 +35,8 @@
         will-change: stroke-dasharray;
         stroke-linecap: round;
         stroke-linejoin: round;
+        stroke: var(--color-tem);
+        stroke-width: 2;
       }
     }
   }
@@ -43,6 +46,10 @@
     
     .solid-logo path {
       fill: var(--hover-color);
+    }
+    
+    .outline-logo .logo-path {
+      stroke: var(--hover-color);
     }
   }
 }
