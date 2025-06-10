@@ -60,11 +60,6 @@ body {
   color: var(--anchor-color);
 }
 
-// Scrollbar styling
-::-webkit-scrollbar {
-  width: 10px;
-}
-
 ::-webkit-scrollbar-track {
   background: var(--primary-color);
 }
