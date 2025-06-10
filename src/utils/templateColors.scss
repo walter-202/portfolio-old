@@ -37,6 +37,19 @@
   .skill-container:hover .skill__name{
     color: var(--primary-text-color);
   }
+  
+  // Contact button theme colors
+  .contact-button:hover span.bg {
+    background: rgb(16, 219, 246);
+  }
+  .contact-button span.base {
+    border: 1px solid rgb(16, 219, 246);
+  }
+  
+  // Logo outline stroke
+  .outline-logo .logo-path {
+    stroke: rgb(16, 219, 246);
+  }
 }
 
 // Theme template color 2
@@ -76,6 +89,19 @@
   .skill-container:hover .skills-icon,
   .skill-container:hover .skill__name{
     color: var(--primary-text-color);
+  }
+  
+  // Contact button theme colors
+  .contact-button:hover span.bg {
+    background: rgb(53, 245, 136);
+  }
+  .contact-button span.base {
+    border: 1px solid rgb(53, 245, 136);
+  }
+  
+  // Logo outline stroke
+  .outline-logo .logo-path {
+    stroke: rgb(53, 245, 136);
   }
 }
 
@@ -117,6 +143,19 @@
   .skill-container:hover .skill__name{
     color: var(--primary-text-color);
   }
+  
+  // Contact button theme colors
+  .contact-button:hover span.bg {
+    background: #84cc16;
+  }
+  .contact-button span.base {
+    border: 1px solid #84cc16;
+  }
+  
+  // Logo outline stroke
+  .outline-logo .logo-path {
+    stroke: #84cc16;
+  }
 }
 
 // Theme template color 4
@@ -155,6 +194,19 @@
   .skill-container:hover .skills-icon,
   .skill-container:hover .skill__name{
     color: var(--primary-text-color);
+  }
+  
+  // Contact button theme colors
+  .contact-button:hover span.bg {
+    background: rgb(240, 93, 70);
+  }
+  .contact-button span.base {
+    border: 1px solid rgb(240, 93, 70);
+  }
+  
+  // Logo outline stroke
+  .outline-logo .logo-path {
+    stroke: rgb(240, 93, 70);
   }
 }
 
@@ -196,6 +248,19 @@
   .skill-container:hover .skill__name{
     color: var(--primary-text-color);
   }
+  
+  // Contact button theme colors
+  .contact-button:hover span.bg {
+    background: #fdae38;
+  }
+  .contact-button span.base {
+    border: 1px solid #fdae38;
+  }
+  
+  // Logo outline stroke
+  .outline-logo .logo-path {
+    stroke: #fdae38;
+  }
 }
 
 // Theme template color 6
@@ -235,6 +300,19 @@
   .skill-container:hover .skills-icon,
   .skill-container:hover .skill__name{
     color: var(--primary-text-color);
+  }
+  
+  // Contact button theme colors
+  .contact-button:hover span.bg {
+    background: var(--color-tem);
+  }
+  .contact-button span.base {
+    border: 1px solid var(--color-tem);
+  }
+  
+  // Logo outline stroke
+  .outline-logo .logo-path {
+    stroke: var(--color-tem);
   }
 }
 
@@ -276,7 +354,17 @@
   .skill-container:hover .skill__name{
     color: var(--primary-text-color);
   }
+  
+  // Contact button theme colors
+  .contact-button:hover span.bg {
+    background: #a37346;
+  }
+  .contact-button span.base {
+    border: 1px solid #a37346;
+  }
+  
+  // Logo outline stroke
+  .outline-logo .logo-path {
+    stroke: #a37346;
+  }
 }
-
-
-// switch the text colors to whichever you like
