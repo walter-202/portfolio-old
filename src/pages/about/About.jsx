@@ -3,7 +3,7 @@ import myCV from '/src/assets/images/MyCV.pdf'
 import { Fade } from "react-awesome-reveal";
 
 // components
-import { Cards, Blast } from '../../components'
+import { Cards, Blast, Button } from '../../components'
 import './about.scss'
 
 const About = () => {
@@ -63,18 +63,13 @@ un perfil específico. En la actualidad estoy
 buscando un un trabajo que me ayude a seguir
 ampliando mi experiencia.
               </p>
-              <a
-                style={{ marginTop: '2rem' }}
-                href={myCV}
-                download="Walter_Aguilar_CV"
-                className="contact-button"
-              >
-                <div>
-                  <span className="bg switch__bg"></span>
-                  <span className="base switch__border-color"></span>
-                  <span className="text">Descarga mi CV</span>
-                </div>
-              </a>
+              <div style={{ marginTop: '2rem' }}>
+                <a href={myCV} download="Walter_Aguilar_CV">
+                  <Button size="large">
+                    Descarga mi CV
+                  </Button>
+                </a>
+              </div>
             </Fade>
           </div>
         </article>

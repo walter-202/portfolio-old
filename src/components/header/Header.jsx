@@ -4,6 +4,7 @@ import { MdArrowDropDown } from 'react-icons/md'
 
 import Blast from '../BlastAnimation/Blast'
 import Logo from '../logoAnimation/Logo'
+import Button from '../button/Button'
 import './header.scss'
 
 const nameArray = ['a', 'l', 't', 'e', 'r', ' ','A','g','u','i','l','a','r']
@@ -61,12 +62,10 @@ const Header = () => {
               </h1>
 
               <p className="text-desc">WEB DEVELOPER /  DISEÑADOR UI/UX</p>
-              <Link to="/contacto" className="contact-button">
-                <div>
-                  <span className="bg switch__bg"></span>
-                  <span className="base switch__border-color"></span>
-                  <span className="text">Contáctame</span>
-                </div>
+              <Link to="/contacto">
+                <Button size="large">
+                  Contáctame
+                </Button>
               </Link>
             </main>
           </div>

@@ -1,0 +1,259 @@
+.themed-button {
+  position: relative;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all var(--transition-base);
+  outline: none;
+  
+  &:focus-visible {
+    outline: 2px solid var(--color-tem);
+    outline-offset: 2px;
+  }
+  
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0 15px 0 15px;
+    transition: all var(--transition-base);
+  }
+  
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: -5%;
+    width: 0%;
+    height: 100%;
+    background: var(--color-tem);
+    transform: skewX(-10deg);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+  }
+  
+  &__border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--color-tem);
+    border-radius: 0 15px 0 15px;
+    transition: all var(--transition-base);
+    z-index: 0;
+  }
+  
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--color-tem);
+    font-weight: 600;
+    transition: all var(--transition-base);
+    z-index: 2;
+  }
+  
+  &__spinner {
+    width: 1em;
+    height: 1em;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  // Hover states
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    
+    .themed-button__bg {
+      width: 110%;
+    }
+    
+    .themed-button__content {
+      color: var(--primary-bg);
+    }
+    
+    .themed-button__border {
+      border-color: var(--color-tem);
+      box-shadow: 0 8px 25px rgba(var(--color-tem-rgb), 0.3);
+    }
+  }
+  
+  // Active states
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  
+  // Disabled states
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    
+    &:hover {
+      transform: none;
+    }
+    
+    .themed-button__bg {
+      width: 0% !important;
+    }
+  }
+  
+  // Loading states
+  &--loading {
+    cursor: wait;
+    
+    .themed-button__content {
+      opacity: 0.7;
+    }
+  }
+  
+  // Size variations
+  &--small {
+    font-size: 0.875rem;
+    
+    .themed-button__container {
+      height: 36px;
+      padding: 0 1rem;
+      min-width: 80px;
+    }
+  }
+  
+  &--medium {
+    font-size: 1rem;
+    
+    .themed-button__container {
+      height: 45px;
+      padding: 0 1.5rem;
+      min-width: 120px;
+    }
+  }
+  
+  &--large {
+    font-size: 1.125rem;
+    
+    .themed-button__container {
+      height: 55px;
+      padding: 0 2rem;
+      min-width: 160px;
+    }
+  }
+  
+  // Variant styles
+  &--primary {
+    // Default styling already applied above
+  }
+  
+  &--secondary {
+    .themed-button__border {
+      border-color: var(--anchor-color);
+    }
+    
+    .themed-button__content {
+      color: var(--anchor-color);
+    }
+    
+    .themed-button__bg {
+      background: var(--anchor-color);
+    }
+    
+    &:hover:not(:disabled) {
+      .themed-button__content {
+        color: var(--primary-bg);
+      }
+    }
+  }
+  
+  &--outline {
+    .themed-button__border {
+      background: transparent;
+    }
+    
+    .themed-button__bg {
+      background: transparent;
+    }
+    
+    &:hover:not(:disabled) {
+      .themed-button__bg {
+        background: var(--color-tem);
+      }
+    }
+  }
+  
+  &--ghost {
+    .themed-button__border {
+      border-color: transparent;
+    }
+    
+    .themed-button__bg {
+      background: rgba(var(--color-tem-rgb), 0.1);
+      width: 100%;
+      transform: none;
+      left: 0;
+    }
+    
+    &:hover:not(:disabled) {
+      .themed-button__bg {
+        background: rgba(var(--color-tem-rgb), 0.2);
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsive design
+@media screen and (max-width: 768px) {
+  .themed-button {
+    &--small .themed-button__container {
+      height: 32px;
+      padding: 0 0.75rem;
+      min-width: 70px;
+    }
+    
+    &--medium .themed-button__container {
+      height: 40px;
+      padding: 0 1.25rem;
+      min-width: 100px;
+    }
+    
+    &--large .themed-button__container {
+      height: 48px;
+      padding: 0 1.5rem;
+      min-width: 140px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .themed-button {
+    &--small .themed-button__container {
+      height: 30px;
+      padding: 0 0.5rem;
+      min-width: 60px;
+    }
+    
+    &--medium .themed-button__container {
+      height: 36px;
+      padding: 0 1rem;
+      min-width: 80px;
+    }
+    
+    &--large .themed-button__container {
+      height: 42px;
+      padding: 0 1.25rem;
+      min-width: 120px;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import feelingblue from '../../assets/images/undraw_page_not_found_re_e9o6.svg'
 import { Fade } from "react-awesome-reveal";
+import { Button } from '../../components'
 
 import './errorpage.scss'
 
@@ -18,12 +19,10 @@ const ErrorPage = () => {
           </div>
         </Fade>
         <Fade bottom>
-          <Link to="/" className="contact-button">
-            <div>
-              <span className="bg switch__bg"></span>
-              <span className="base switch__border-color"></span>
-              <span className="text">Ir a Inicio</span>
-            </div>
+          <Link to="/">
+            <Button size="large">
+              Ir a Inicio
+            </Button>
           </Link>
         </Fade>
       </div>

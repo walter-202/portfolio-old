@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { BsExclamationLg, BsPatchCheckFill } from 'react-icons/bs'
 import { RiSendPlane2Fill } from 'react-icons/ri'
-import { Blast, Map } from '../../components'
+import { Blast, Map, Button } from '../../components'
 import { Fade,Reveal } from "react-awesome-reveal";
 
 
@@ -204,16 +204,10 @@ const Contact = React.memo(() => {
             </div>
           </Fade>
           <Reveal>
-            <button type="submit" className="contact-button submit-button">
-              <div>
-                <span className="bg switch__bg"></span>
-                <span className="base switch__border-color"></span>
-                <span className="text">
-                  Enviar Mensaje
-                  <RiSendPlane2Fill className="message-deliver" />
-                </span>
-              </div>
-            </button>
+            <Button type="submit" size="large">
+              Enviar Mensaje
+              <RiSendPlane2Fill />
+            </Button>
           </Reveal>
           <Reveal >
             <footer className="footer">

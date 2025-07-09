@@ -52,6 +52,20 @@
     color: rgb(16, 219, 246);
   }
   
+  // Themed button component
+  .themed-button__border {
+    border-color: rgb(16, 219, 246);
+  }
+  .themed-button__bg {
+    background: rgb(16, 219, 246);
+  }
+  .themed-button__content {
+    color: rgb(16, 219, 246);
+  }
+  .themed-button:hover:not(:disabled) .themed-button__content {
+    color: var(--primary-bg);
+  }
+  
   // Logo outline stroke
   .outline-logo .logo-path {
     stroke: rgb(16, 219, 246);
@@ -112,6 +126,20 @@
   }
   .contact-button span.text {
     color: rgb(53, 245, 136);
+  }
+  
+  // Themed button component
+  .themed-button__border {
+    border-color: rgb(53, 245, 136);
+  }
+  .themed-button__bg {
+    background: rgb(53, 245, 136);
+  }
+  .themed-button__content {
+    color: rgb(53, 245, 136);
+  }
+  .themed-button:hover:not(:disabled) .themed-button__content {
+    color: var(--primary-bg);
   }
   
   // Logo outline stroke
@@ -176,6 +204,20 @@
     color: #84cc16;
   }
   
+  // Themed button component
+  .themed-button__border {
+    border-color: #84cc16;
+  }
+  .themed-button__bg {
+    background: #84cc16;
+  }
+  .themed-button__content {
+    color: #84cc16;
+  }
+  .themed-button:hover:not(:disabled) .themed-button__content {
+    color: var(--primary-bg);
+  }
+  
   // Logo outline stroke
   .outline-logo .logo-path {
     stroke: #84cc16;
@@ -235,6 +277,20 @@
   }
   .contact-button span.text {
     color: rgb(240, 93, 70);
+  }
+  
+  // Themed button component
+  .themed-button__border {
+    border-color: rgb(240, 93, 70);
+  }
+  .themed-button__bg {
+    background: rgb(240, 93, 70);
+  }
+  .themed-button__content {
+    color: rgb(240, 93, 70);
+  }
+  .themed-button:hover:not(:disabled) .themed-button__content {
+    color: var(--primary-bg);
   }
   
   // Logo outline stroke
@@ -299,6 +355,20 @@
     color: #fdae38;
   }
   
+  // Themed button component
+  .themed-button__border {
+    border-color: #fdae38;
+  }
+  .themed-button__bg {
+    background: #fdae38;
+  }
+  .themed-button__content {
+    color: #fdae38;
+  }
+  .themed-button:hover:not(:disabled) .themed-button__content {
+    color: var(--primary-bg);
+  }
+  
   // Logo outline stroke
   .outline-logo .logo-path {
     stroke: #fdae38;
@@ -356,6 +426,20 @@
   }
   .contact-button span.text {
     color: var(--color-tem);
+  }
+  
+  // Themed button component
+  .themed-button__border {
+    border-color: var(--color-tem);
+  }
+  .themed-button__bg {
+    background: var(--color-tem);
+  }
+  .themed-button__content {
+    color: var(--color-tem);
+  }
+  .themed-button:hover:not(:disabled) .themed-button__content {
+    color: var(--primary-bg);
   }
   
   // Logo outline stroke
@@ -418,6 +502,20 @@
   }
   .contact-button span.text {
     color: #a37346;
+  }
+  
+  // Themed button component
+  .themed-button__border {
+    border-color: #a37346;
+  }
+  .themed-button__bg {
+    background: #a37346;
+  }
+  .themed-button__content {
+    color: #a37346;
+  }
+  .themed-button:hover:not(:disabled) .themed-button__content {
+    color: var(--primary-bg);
   }
   
   // Logo outline stroke
