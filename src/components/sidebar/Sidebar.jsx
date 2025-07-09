@@ -20,10 +20,17 @@ const Sidebar = React.memo(() => {
     dispatch({ type: 'TOGGLE_COLLAPSE' })
   }
 
+  const toggleMobileMenu = () => {
+    if (state.openCloseNav1) {
+      dispatch({ type: 'CLOSE_NAVBAR' })
+    } else {
+      dispatch({ type: 'OPEN_NAVBAR' })
+    }
+  }
   return (
     <>
       <BsListNested
-        onClick={() => dispatch({ type: 'OPEN_NAVBAR' })}
+        onClick={toggleMobileMenu}
         className="menu-icon switch__color"
         aria-label="Abrir menú de navegación"
       />
