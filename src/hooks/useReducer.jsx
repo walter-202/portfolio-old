@@ -13,5 +13,9 @@ export const reducer = (state, action) => {
   if (action.type === 'CLOSE_NAVBAR') {
     return { ...state, openCloseNav1: false }
   }
+  // collapse functionality
+  if (action.type === 'TOGGLE_COLLAPSE') {
+    return { ...state, isCollapsed: !state.isCollapsed }
+  }
   throw new Error('The functionality is invalid')
 }
