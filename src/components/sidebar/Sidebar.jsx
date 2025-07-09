@@ -119,15 +119,6 @@ const Sidebar = React.memo(() => {
             })}
           </div>
         </div>
-        
-        {/* Tooltip for collapsed state */}
-        <div 
-          className={`sidebar-tooltip ${state.isCollapsed ? 'visible' : ''}`}
-          role="tooltip"
-          aria-hidden={!state.isCollapsed}
-        >
-          <span className="tooltip-text"></span>
-        </div>
       </aside>
     </>
   )
