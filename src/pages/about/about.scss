@@ -91,18 +91,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-@media screen and (max-width: 450px) {
-  .section-about-description {
-    grid-template-columns: 1fr;
-  }
-  .section-about-description h2 {
-    font-size: 2rem;
-  }
-  .about-description-skills {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .section-about-description p {
-    font-size: 0.975rem;
-  }
-}
