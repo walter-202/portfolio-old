@@ -1,4 +1,3 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import feelingblue from '../../assets/images/undraw_page_not_found_re_e9o6.svg'
 import { Fade } from "react-awesome-reveal";

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import { memo, useState, useRef, useEffect } from 'react'
 import { BsExclamationLg, BsPatchCheckFill } from 'react-icons/bs'
 import { RiSendPlane2Fill } from 'react-icons/ri'
 import { Blast, Map, Button } from '../../components'
@@ -9,9 +9,9 @@ import { Fade,Reveal } from "react-awesome-reveal";
 import emailjs from '@emailjs/browser'
 import './contact.scss'
 
-const Contact = React.memo(() => {
-  const [letterClass, setLetterClass] = React.useState('text-animate')
-  React.useEffect(() => {
+const Contact = memo(function Contact() {
+  const [letterClass, setLetterClass] = useState('text-animate')
+  useEffect(() => {
     const interval = setTimeout(() => {
       setLetterClass('text-animate-hover')
     }, 3000)

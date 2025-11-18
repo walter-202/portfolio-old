@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -44,7 +44,7 @@ const Cards = () => {
       })
 
       // Add hover animations for each card
-      cardsRef.current.forEach((card, index) => {
+      cardsRef.current.forEach((card) => {
         if (!card) return
 
         const icon = card.querySelector('.skills-icon')

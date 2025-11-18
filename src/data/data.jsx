@@ -1,5 +1,3 @@
-import React from 'react'
-
 // react icons
 import { FiGrid, FiLinkedin, FiFigma } from 'react-icons/fi'
 import { VscProject } from 'react-icons/vsc'
@@ -29,7 +27,7 @@ import { GrGithub, GrTwitter } from 'react-icons/gr'
 import { AiFillHtml5 } from 'react-icons/ai'
 import { DiCss3, DiMongodb } from 'react-icons/di'
 import { IoLogoJavascript } from 'react-icons/io'
-import { FaAndroid, FaNodeJs,FaPhotoVideo} from 'react-icons/fa'
+import { FaAndroid, FaNodeJs } from 'react-icons/fa'
 
 // sidebar menu list and icons
 const sideBarMenu = [

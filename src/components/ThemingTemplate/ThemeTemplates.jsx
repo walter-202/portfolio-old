@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import { FiSettings } from 'react-icons/fi'
 import { BsMoonStars, BsFillSunFill } from 'react-icons/bs'
 import { useGLobalContext } from '/src/hooks/contextAPI'
@@ -6,7 +6,7 @@ import { useGLobalContext } from '/src/hooks/contextAPI'
 import { BsXLg } from 'react-icons/bs'
 import './themetemplate.scss'
 
-const ThemeTemplate = React.memo(() => {
+const ThemeTemplate = memo(function ThemeTemplate() {
   const {
     isTemplateOpen,
     openTemplate,

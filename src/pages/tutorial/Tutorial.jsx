@@ -1,4 +1,3 @@
-import React from 'react'
 import { Fade } from "react-awesome-reveal";
 import './tutorial.scss'
 import svgUnderConst from '../../assets/images/undraw_under_construction_-46-pa.svg'
