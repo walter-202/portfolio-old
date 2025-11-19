@@ -76,4 +76,5 @@ const useGLobalContext = () => {
   return useContext(AppContext)
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { AppProvider, useGLobalContext }
