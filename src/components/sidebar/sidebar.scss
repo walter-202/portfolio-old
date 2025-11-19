@@ -8,8 +8,13 @@
   z-index: 1000;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateX(0);
-  box-shadow: var(--box-shadow);
-  
+  box-shadow: var(--glass-shadow),
+              var(--glow-sm);
+  backdrop-filter: blur(var(--glass-blur));
+
+  // Glass morphism border
+  border-right: 1px solid var(--glass-border);
+
   &::after {
     content: '';
     position: absolute;
@@ -17,30 +22,54 @@
     height: 180px;
     top: 0;
     left: 0;
-    background: linear-gradient(135deg, 
-      var(--typical-color) 0%, 
-      rgba(var(--color-tem-rgb), 0.1) 100%);
+    background: linear-gradient(135deg,
+      var(--typical-color) 0%,
+      rgba(var(--color-tem-rgb), 0.15) 100%);
+    opacity: 0.9;
   }
-  
+
+  // Subtle shimmer effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-shimmer);
+    animation: shimmer 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
   // Collapsed state
   &.collapsed {
     width: 70px;
-    
+
     .aside-wrapper {
       padding: 1rem 0.5rem;
     }
-    
+
     .sidebar__name.collapsed,
     .nav__text.collapsed {
       opacity: 0;
       transform: translateX(-10px);
       pointer-events: none;
     }
-    
+
     .social-icon {
       flex-direction: column;
       gap: 0.5rem;
     }
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
   }
 }
 

@@ -29,14 +29,24 @@
   width: 100%;
   height: 50px;
   outline: none;
-  border: none;
+  border: 1px solid var(--glass-border);
   box-shadow: var(--box-shadow);
-  background: var(--primary-bg);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
   padding: 0 20px;
   margin-bottom: 10px;
   -webkit-text-fill-color: #8d8d8d;
   font-family: sans-serif;
   font-size: 0.975rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+
+  &:focus {
+    border-color: var(--color-tem);
+    box-shadow: var(--glow-sm),
+                var(--box-shadow);
+    background: rgba(var(--color-tem-rgb), 0.05);
+  }
 }
 .form-input-group textarea {
   height: 25vh;
@@ -140,17 +150,25 @@ button.contact-button:hover .message-deliver {
   animation: fadeInUp 1.2s;
 }
 .map-content {
-  background-color: rgba(0, 0, 0, 0.744);
+  background: linear-gradient(135deg,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(var(--color-tem-rgb), 0.2) 50%,
+    rgba(0, 0, 0, 0.75) 100%);
   color: #fff;
   position: absolute;
   top: 40px;
   right: 20px;
   padding: 20px;
-  backdrop-filter: blur(100%);
+  backdrop-filter: blur(15px);
   border-radius: 0 0 10px 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--glass-shadow),
+              var(--glow-sm);
   z-index: 999;
+
   h3 {
     font-size: 1.5rem;
+    text-shadow: var(--glow-sm);
   }
   span {
     font-size: 16px;

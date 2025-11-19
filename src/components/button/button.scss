@@ -30,12 +30,12 @@
     left: -5%;
     width: 0%;
     height: 100%;
-    background: var(--color-tem);
+    background: var(--gradient-accent);
     transform: skewX(-10deg);
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 1;
   }
-  
+
   &__border {
     position: absolute;
     top: 0;
@@ -46,6 +46,17 @@
     border-radius: 0 15px 0 15px;
     transition: all var(--transition-base);
     z-index: 0;
+
+    // Sutil inner glow
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 0 15px 0 15px;
+      opacity: 0;
+      box-shadow: var(--inner-glow);
+      transition: opacity var(--transition-base);
+    }
   }
   
   &__content {
@@ -72,18 +83,28 @@
   // Hover states
   &:hover:not(:disabled) {
     transform: translateY(-2px);
-    
+
     .themed-button__bg {
       width: 110%;
     }
-    
+
     .themed-button__content {
       color: var(--primary-bg);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
     }
-    
+
     .themed-button__border {
       border-color: var(--color-tem);
-      box-shadow: 0 8px 25px rgba(var(--color-tem-rgb), 0.3);
+      box-shadow: var(--glow-md),
+                  0 8px 25px rgba(var(--color-tem-rgb), 0.4);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    .themed-button__container {
+      box-shadow: var(--glow-sm);
     }
   }
   
