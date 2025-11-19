@@ -15,6 +15,11 @@
   cursor: pointer;
   background: var(--glass-bg);
   backdrop-filter: blur(5px);
+  will-change: transform, box-shadow;
+
+  // GPU acceleration
+  transform: translateZ(0);
+  backface-visibility: hidden;
 
   // Gradiente sutil en el borde
   &::before {
@@ -50,6 +55,11 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  will-change: transform;
+
+  // GPU acceleration para imágenes
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .section__projects-single-projects:hover img {
