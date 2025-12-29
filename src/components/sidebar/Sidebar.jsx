@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import { memo, useReducer } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { sideBarMenu, socialIcons } from '../../data/data'
 
@@ -12,7 +12,7 @@ const defaultOptions = {
   isCollapsed: false,
 }
 
-const Sidebar = React.memo(() => {
+const Sidebar = memo(function Sidebar() {
   // dispatch reducer functionality
   const [state, dispatch] = useReducer(reducer, defaultOptions)
 

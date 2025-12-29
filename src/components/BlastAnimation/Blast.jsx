@@ -1,4 +1,3 @@
-import React from 'react'
 import './blast.scss'
 
 const Blast = ({ letterClass, arrayStr, indexLetter }) => {

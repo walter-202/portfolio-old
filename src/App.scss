@@ -1,3 +1,4 @@
+@use './utils/animations.scss';
 @import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Montserrat&family=Poppins:wght@300;500;700&display=swap');
 @import 'animate.css';
 
@@ -25,13 +26,13 @@
   --theme-wrapper-bg: #252423;
   --primary-text-color: #252423;
   --hover-color: #fff;
-  
+
   // Spacing system
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 3rem;
-  
+
   // Typography
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -39,16 +40,45 @@
   --font-size-xl: 1.5rem;
   --font-size-2xl: 2rem;
   --font-size-3xl: 3rem;
-  
+
   // Border radius
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
-  
+
   // Transitions
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
+
+  // Glass morphism effects
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 10px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  // Gradient system - subtle variations using theme color
+  --gradient-primary: linear-gradient(135deg,
+    rgba(var(--color-tem-rgb), 0.1) 0%,
+    rgba(var(--color-tem-rgb), 0.05) 100%);
+  --gradient-accent: linear-gradient(135deg,
+    var(--color-tem) 0%,
+    rgba(var(--color-tem-rgb), 0.7) 100%);
+  --gradient-shimmer: linear-gradient(90deg,
+    transparent 0%,
+    rgba(var(--color-tem-rgb), 0.3) 50%,
+    transparent 100%);
+
+  // Glow effects - micro-brillos
+  --glow-sm: 0 0 10px rgba(var(--color-tem-rgb), 0.3);
+  --glow-md: 0 0 20px rgba(var(--color-tem-rgb), 0.4),
+             0 0 40px rgba(var(--color-tem-rgb), 0.2);
+  --glow-lg: 0 0 30px rgba(var(--color-tem-rgb), 0.5),
+             0 0 60px rgba(var(--color-tem-rgb), 0.3),
+             0 0 90px rgba(var(--color-tem-rgb), 0.1);
+
+  // Inner glow for buttons and cards
+  --inner-glow: inset 0 0 20px rgba(var(--color-tem-rgb), 0.2);
 }
 
 body {
@@ -154,6 +184,34 @@ ul {
   --typical-color: rgb(40, 40, 39);
   --theme-wrapper-bg: #ffffff;
   --hover-color: #1b1b1b;
+
+  // Glass morphism effects for light mode
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(217, 119, 6, 0.2);
+  --glass-blur: 12px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+  // Gradient system for light mode
+  --gradient-primary: linear-gradient(135deg,
+    rgba(var(--color-tem-rgb), 0.08) 0%,
+    rgba(var(--color-tem-rgb), 0.03) 100%);
+  --gradient-accent: linear-gradient(135deg,
+    var(--color-tem) 0%,
+    rgba(var(--color-tem-rgb), 0.8) 100%);
+  --gradient-shimmer: linear-gradient(90deg,
+    transparent 0%,
+    rgba(var(--color-tem-rgb), 0.2) 50%,
+    transparent 100%);
+
+  // Glow effects for light mode
+  --glow-sm: 0 0 8px rgba(var(--color-tem-rgb), 0.25);
+  --glow-md: 0 0 15px rgba(var(--color-tem-rgb), 0.3),
+             0 0 30px rgba(var(--color-tem-rgb), 0.15);
+  --glow-lg: 0 0 20px rgba(var(--color-tem-rgb), 0.4),
+             0 0 40px rgba(var(--color-tem-rgb), 0.25),
+             0 0 60px rgba(var(--color-tem-rgb), 0.1);
+
+  --inner-glow: inset 0 0 15px rgba(var(--color-tem-rgb), 0.15);
 }
 
 // Responsive system - simplified to 3 main breakpoints

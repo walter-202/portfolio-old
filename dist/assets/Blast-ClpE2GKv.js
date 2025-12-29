@@ -1,0 +1,1 @@
+import{j as t}from"./index-Dj8cVusZ.js";const m=({letterClass:a,arrayStr:n,indexLetter:e})=>t.jsx("span",{children:n.map((s,r)=>t.jsx("span",{className:`${a} _${r+e}`,children:s},s+r))});export{m as B};

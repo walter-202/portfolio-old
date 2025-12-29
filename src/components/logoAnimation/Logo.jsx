@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { memo, useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import './logo.scss'
@@ -106,4 +106,4 @@ const Logo = () => {
   )
 }
 
-export default React.memo(Logo)
+export default memo(Logo)

@@ -1,0 +1,88 @@
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  will-change: transform;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--color-tem);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: var(--glow-sm);
+
+  &.pointer {
+    transform: translate(-50%, -50%) scale(0.5);
+    background: var(--hover-color);
+  }
+}
+
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-tem);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease-out;
+  background: radial-gradient(
+    circle,
+    rgba(var(--color-tem-rgb), 0.1) 0%,
+    transparent 70%
+  );
+
+  &.pointer {
+    width: 60px;
+    height: 60px;
+    border-color: var(--hover-color);
+    box-shadow: var(--glow-md);
+    background: radial-gradient(
+      circle,
+      rgba(var(--color-tem-rgb), 0.2) 0%,
+      transparent 70%
+    );
+  }
+}
+
+// Ocultar cursor por defecto en elementos interactivos
+body {
+  cursor: none;
+}
+
+a, button, input, textarea, select, [role="button"] {
+  cursor: none !important;
+}
+
+// Responsive - mostrar cursor normal en móviles
+@media (max-width: 768px), (hover: none) {
+  body, a, button, input, textarea, select, [role="button"] {
+    cursor: auto !important;
+  }
+
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+}
+
+// Soporte para usuarios que prefieren reducir movimiento
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+
+  body, a, button, input, textarea, select, [role="button"] {
+    cursor: auto !important;
+  }
+}

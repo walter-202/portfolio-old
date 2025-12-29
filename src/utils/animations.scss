@@ -1,0 +1,200 @@
+// Animaciones adicionales para el portafolio
+
+// Fade in from bottom
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// Fade in from left
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-40px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// Fade in from right
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(40px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// Scale in
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Pulse glow effect
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: var(--glow-sm);
+  }
+  50% {
+    box-shadow: var(--glow-md);
+  }
+}
+
+// Floating animation
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+// Slide in from top
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// Rotate in
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+// Clases de animación reutilizables
+.animate-fade-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-left {
+  animation: fadeInLeft 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-fade-right {
+  animation: fadeInRight 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-slide-down {
+  animation: slideInDown 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-rotate-in {
+  animation: rotateIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+// Delays para animaciones en cadena
+@for $i from 1 through 10 {
+  .animate-delay-#{$i} {
+    animation-delay: #{$i * 0.1}s;
+  }
+}
+
+// Scroll reveal animations
+.scroll-reveal {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+  &.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &.from-bottom {
+    transform: translateY(40px);
+  }
+
+  &.from-left {
+    transform: translateX(-40px);
+  }
+
+  &.from-right {
+    transform: translateX(40px);
+  }
+
+  &.scale {
+    transform: scale(0.9);
+  }
+}
+
+// Optimización de performance
+.will-animate {
+  will-change: transform, opacity;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+// Limpiar will-change después de la animación
+.animated {
+  will-change: auto;
+}
+
+// Soporte para reduced motion
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-float,
+  .animate-pulse-glow {
+    animation: none !important;
+  }
+}

@@ -1,8 +1,8 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import { memo, createContext, useContext, useEffect, useState } from 'react'
 
 const AppContext = createContext()
 
-const AppProvider = React.memo(({ children }) => {
+const AppProvider = memo(function AppProvider({ children }) {
   const [colorTheme, setColorTheme] = useState('dark-mode')
   const [isTemplateOpen, setIsTemplateOpen] = useState(false)
   const [showSearchInput, setShowSearchInput] = useState(false)
@@ -76,4 +76,5 @@ const useGLobalContext = () => {
   return useContext(AppContext)
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { AppProvider, useGLobalContext }

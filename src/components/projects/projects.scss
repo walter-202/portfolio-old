@@ -13,11 +13,40 @@
   height: 350px;
   transition: all 0.3s ease;
   cursor: pointer;
-  
+  background: var(--glass-bg);
+  backdrop-filter: blur(5px);
+  will-change: transform, box-shadow;
+
+  // GPU acceleration
+  transform: translateZ(0);
+  backface-visibility: hidden;
+
+  // Gradiente sutil en el borde
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: 12px;
+    background: var(--gradient-accent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                  linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+  }
+
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--glow-md),
+                0 15px 35px rgba(0, 0, 0, 0.4);
     border-color: var(--hover-color);
+
+    &::before {
+      opacity: 1;
+    }
   }
 }
 
@@ -26,6 +55,11 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  will-change: transform;
+
+  // GPU acceleration para imágenes
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .section__projects-single-projects:hover img {
@@ -37,10 +71,11 @@
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.7) 100%
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(var(--color-tem-rgb), 0.3) 50%,
+    rgba(0, 0, 0, 0.9) 100%
   );
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   text-align: center;
   top: 0;
   left: 0;
@@ -52,6 +87,9 @@
   justify-content: center;
   align-items: center;
   padding: 2rem;
+
+  // Glass border effect
+  border: 1px solid rgba(255, 255, 255, 0.1);
   
   p {
     margin-bottom: 1rem;
@@ -94,7 +132,7 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
-  
+
   a {
     font-size: clamp(1.5rem, 2.5vw, 2rem);
     color: #fff;
@@ -103,11 +141,30 @@
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+
+    // Inner glow effect
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      opacity: 0;
+      transition: opacity var(--transition-base);
+    }
+
     &:hover {
       color: var(--color-tem);
       background: rgba(255, 255, 255, 0.2);
       transform: translateY(-3px);
+      box-shadow: var(--glow-sm);
+
+      &::before {
+        opacity: 1;
+      }
     }
   }
 }
